@@ -2,6 +2,12 @@
   --first-color: rgb(172, 250, 172);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
