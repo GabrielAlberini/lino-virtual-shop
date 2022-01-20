@@ -1,15 +1,15 @@
 import React from 'react';
-import './Products.css';
+import './NotFound.css';
 import { Layout } from '../../components/Layout/Layout';
 
-const Products = () => {
+const NotFound = () => {
     return (
         <Layout>
             <div className='container-section'>
-                <p>Hola soy la página de Products</p>
+                <p style={{fontSize: 50}}>(404) Página no encontrada</p>
             </div>
         </Layout>
     )
 }
 
-export { Products };
+export { NotFound };

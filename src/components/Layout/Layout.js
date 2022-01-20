@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Footer } from '../../screens/index' 
+import { Header, Footer } from '../../screens/componentsRoutes' 
 import './Layout.css'
 
 const Layout = ({ children, showHeader = true, showFooter = true }) => {

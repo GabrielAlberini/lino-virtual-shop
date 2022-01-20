@@ -1,51 +1,28 @@
-import { React, useState } from "react";
+import { React } from "react";
 import './Item.css'
-import { Button } from "@material-ui/core";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import { Accountant } from "../Accountant/Accountant";
 
-const Item = ({data}) => {
-
+const Item = ({data}) => {  
     
-    const {name, image} = data;
-    console.log(image)
-    // const [mount, setMount] = useState(0)
-    // const [currentStock, setCurrentStock] = useState(stock)
+    const { name, img, description } = data;
 
-    // const addMount = () => {
-    //     if (mount < stock) {
-    //         setMount(mount + 1)
-    //         setCurrentStock(currentStock - 1)
-    //     } 
-    // }
-
-    // const lessMount = () => {
-    //     if(mount > 0) {
-    //         setMount(mount - 1)
-    //         setCurrentStock(currentStock + 1)
-    //     }
-    // }
-
-
+    const onAdd = (value, num) => {
+        let total = value + num;
+        return console.log(total)
+    }
+    const onLess = (value, num) => {
+        let total = value - num;
+        return console.log(total)
+    }
+    
     return(
-        <div className="container-item">
-            <img src={image} alt="imagen de capitulo"/>
-            <p style={{padding: 19}}>{name}</p>
-
-            {/* <img src={`../../assets/${img}`} alt="Imagen de producto"/>
-            <p>Nombre: {name}</p>
-            <p>Precio: {price}</p>
-            <p>Stock: {currentStock}</p>
-            <p>{mount}</p>
-            <Button onClick={lessMount}>
-                <RemoveIcon />
-            </Button>
-            <Button onClick={addMount}>
-                <AddIcon />
-            </Button>
-            <Button className="add-to-cart">
-                Agregar Al carrito
-            </Button>         */}
+        <div className='item'>
+            <div className='container-item-img'>
+                <img className='item-img' src={`../../assets/${img}`} alt={name} />
+            </div>
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <Accountant restarTotal={onLess} sumarTotal={onAdd} data={data}/> 
         </div>
     )
 }

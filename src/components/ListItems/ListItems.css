@@ -1,7 +1,44 @@
-.container-items {
+.container-options {
+    width: 100%;
+    height: 400px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2rem;
+    justify-content: space-evenly;
+    margin: 1rem auto;
+}
+
+.container-options > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 300px;
+}
+
+.container-options > div > button{
+    background-color: rgba(71, 177, 71, 0.774);
+    color: white;
+    font-weight: bold;
+    margin: 1rem;
+    border: 1px solid black;
+}
+
+.container-options > div > button:hover{
+    color: green;    
+}
+
+.select-all-product {
+    background:lightblue url("../../../public/assets/all-products.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.select-frozen {
+    background:lightblue url("../../../public/assets/frozen.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.select-baked {
+    background:lightblue url("../../../public/assets/baked.jpg");
+    background-position: center;
+    background-size: cover;
 }

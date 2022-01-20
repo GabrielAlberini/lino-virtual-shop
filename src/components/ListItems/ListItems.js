@@ -1,53 +1,70 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from 'react';
 import './ListItems.css'
 import { Item } from "../Item/Item";
-import { API } from "../../API";
-import CircularProgress from '@mui/material/CircularProgress';
-import { logDOM } from "@testing-library/react";
-import { Alarm } from "@mui/icons-material";
+import { Button } from '@mui/material';
 
+const ListItems = ({listItems}) => {
 
-const ListItems = () => {
+    const [active, setActive] = useState("generales")
 
-    const [users, setUsers] = useState([]);
-    const [louder, setLouder] = useState(true)
+    const [generales, setGenerales] = useState([])
+    const [congelados, setCongelados] = useState([]) 
+    const [panificados, setPanificados] = useState([]) 
+    const [title, setTitle] = useState("") 
 
-    useEffect(() => {
-        getUsers();
-    }, []);
+     const productosGenerales = () => {
+        setGenerales(listItems)
+        setActive("generales")
+        setTitle("Todos los productos")
+     }
 
+     const getCongelados = () => {
+        const filtrados =  listItems.filter(x => x.category === "congelados")
+        setCongelados(filtrados);
+        setActive("prodCongelados")
+        setTitle("Congelados")
+     }
+
+     const getPanificados = () => {
+        const filtrados =  listItems.filter(x => x.category === "panificados")
+        setPanificados(filtrados);
+        setActive("prodPanificados")
+        setTitle("Panificados")
+     }
     
-    const getUsers = () => {
-        fetch(API)
-        .then((response) => {
-            return response.json()
-        })
-        .then((data)=> {
-            setUsers(data.results)
-        })
-        .catch((err)=> {
-            console.log(err, "Hubo un problema al cargar la API.")
-        })
-        .finally(() => {
-            setLouder(false)
-        })
-    }
-
     return (
         <>
-        {
-            louder
-            ?
-            <CircularProgress />
-            :
-            <div className="container-list">
-            {
-                users.map((user)=> {
-                    return <Item key={user.id} data={user}/>
-                })
-            }
+        <div className='container-options'>
+            <div className="select-all-product">
+                <Button variant="outlined" onClick={productosGenerales} active={"generales"}>Todos los productos</Button>
             </div>
+            <div className="select-frozen">
+                <Button variant="outlined" onClick={getCongelados} >Congelados</Button>
+            </div>
+            <div className="select-baked">
+                <Button variant="outlined" onClick={getPanificados} >Panificados</Button>
+            </div>
+        </div>
+        <div className='container-home-title'>
+            <h4 className="title">{title}</h4>
+        </div>
+        <div className="container-items">
+        {
+        active === "generales" && generales.map((product) => {
+               return <Item key={product.id} data={product} title="Todos nuestros productos" />
+            })
         }
+        {
+        active === "prodCongelados" && congelados.map((product) => {
+               return <Item key={product.id} data={product} title="Congelados" />
+            })
+        }
+        {
+        active === "prodPanificados" && panificados.map((product) => {
+               return <Item key={product.id} data={product} title="Panificados"/>
+            })
+        }
+        </div>
         </>
     )
 }

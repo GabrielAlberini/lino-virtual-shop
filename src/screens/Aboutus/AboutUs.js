@@ -4,9 +4,13 @@ import { Layout } from '../../components/Layout/Layout'
 
 const AboutUs = () => {
     return (
-        <Layout showFooter={false}>
-            Hola Soy un div
-        </Layout>
+        <>
+            <Layout>
+                <div className='container-section'>
+                    <p>Hola soy la página de About Us</p>
+                </div>
+            </Layout>
+        </>
     )
 }
 

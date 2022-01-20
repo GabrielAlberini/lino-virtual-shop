@@ -1,15 +1,12 @@
 import './App.css';
-import { ContainerListItems } from './components/ContainerListItems/ContainerListItems';
-import { Layout } from './components/Layout/Layout'
+import { Router } from './screens/Router/Router'
  
 function App() {
   return (
     <div className="App">
-        <Layout>
-          <ContainerListItems /> 
-        </Layout> 
+        <Router />
     </div>
   );
-}
+} 
 
 export default App;
