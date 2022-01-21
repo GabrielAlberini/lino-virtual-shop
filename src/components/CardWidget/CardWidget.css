@@ -1,3 +1,10 @@
 svg {
     color: black;
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+}
+svg:hover {
+    color: white;
+    transition: all .2s ease;
 }

@@ -35,9 +35,7 @@ const Header = () => {
                     <li><Button variant="outlined">About Us</Button></li>
                  </Link>
                   <Switch  defaultChecked onClick={changeTheme} />
-                 <Link to='/cart'>
                  <CardWidget />
-                 </Link>
              </ul>
          </nav>
          </AppBar>

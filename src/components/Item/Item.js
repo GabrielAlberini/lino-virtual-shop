@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({data}) => {  
     const {id, name, img, description, price, moodOfSale } = data;
-
-    const onAdd = (value) => {
-        console.log("items agregados ", value)
-    };
-
+    
     return(
         <div className='item'>
             <div className='container-item-img'>
@@ -19,7 +15,7 @@ const Item = ({data}) => {
             <span className="item-price">${price}</span>
             <span> x {moodOfSale}</span>
             <p>{description}</p>
-            <Accountant data={data} onAdd={onAdd}/> 
+            <Accountant data={data}/> 
             <Link to="/cart">
                 <button className='btn'>Agregar al carrito</button>
             </Link>

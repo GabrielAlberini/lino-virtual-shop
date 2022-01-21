@@ -25,7 +25,7 @@ export const API = [
     },
     {
         id : 3,
-        name : "Hamburgusa",
+        name : "Hamburguesa",
         description : "Hamburguesas caseras",
         details : "Hamburguesas 100% caseritas, desde el pan que es riquísimo y blandito hasta la hamburguesa en sí.",
         category: "congelados",

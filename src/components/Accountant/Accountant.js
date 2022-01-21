@@ -11,12 +11,12 @@ const Accountant = ({data, onAdd, showStock = true}) => {
     const [mount, setMount] = useState(0)
     const [stockCurrent, setStockCurrent] = useState(stock)
     const [showUnit, setShowUnit] = useState(false)
-    const [itemCart, setItemCart] = useState({
-        img : data.img,
-        name : data.name,
-        id: data.id,
-        quantify : 0
-    })
+    // const [itemCart, setItemCart] = useState({
+    //     img : data.img,
+    //     name : data.name,
+    //     id: data.id,
+    //     quantify : 0
+    // })
 
     const addMount = () => {
         if(mount < stock ) {

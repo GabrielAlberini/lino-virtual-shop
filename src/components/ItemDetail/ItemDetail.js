@@ -1,8 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import './ItemDetail.css';
 import { Accountant } from "../Accountant/Accountant";
 import Arrow from '@mui/icons-material/ArrowForwardIos';
-import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/cartContext";
 
 const ItemDetail = ({data}) => {
@@ -10,12 +9,11 @@ const ItemDetail = ({data}) => {
         img : data.img,
         name : data.name,
         id: data.id,
+        price: data.price,
         quantify : 0
     })
-
-
-
-    const {addProductsInCart, products} = useContext(CartContext)
+    
+    const {products, addProductsInCart} = useContext(CartContext)
     
     console.log(products)
 
@@ -29,7 +27,6 @@ const ItemDetail = ({data}) => {
         moodOfSale} = data; 
 
     const onAdd = (value) => {
-        console.log("items agregados ", value)
         itemCart.quantify = value;
     }
 
