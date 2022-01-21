@@ -1,7 +1,17 @@
-.loader {
-    margin-top: 50px;
+.loader{
+    margin: 0;
+    padding: 0;
 }
 
 .container-section {
-    padding: 1rem 0;
+
+}
+
+.container-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: space-around;
 }

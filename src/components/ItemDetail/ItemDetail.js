@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import './ItemDetail.css';
 import { Accountant } from "../Accountant/Accountant";
 import Arrow from '@mui/icons-material/ArrowForwardIos';
+import { Link } from 'react-router-dom';
+import { CartContext } from "../../context/cartContext";
 
 const ItemDetail = ({data}) => {
+    const [itemCart, setItemCart] = useState({
+        img : data.img,
+        name : data.name,
+        id: data.id,
+        quantify : 0
+    })
+
+
+
+    const {addProductsInCart, products} = useContext(CartContext)
+    
+    console.log(products)
 
     const {id, 
         name, 
@@ -12,7 +26,16 @@ const ItemDetail = ({data}) => {
         img, 
         ingredientes, 
         price,
-        moodOfSale} = data;
+        moodOfSale} = data; 
+
+    const onAdd = (value) => {
+        console.log("items agregados ", value)
+        itemCart.quantify = value;
+    }
+
+    const sendItems = () => {
+        addProductsInCart(itemCart)
+    }
 
     return(
         <div className="container-details">
@@ -27,11 +50,11 @@ const ItemDetail = ({data}) => {
                 <h3>{description}</h3>
                 <p>{details}</p>
                 <p><Arrow />{ingredientes}</p>
-                <Accountant showStock={false} showDetail={false} data={data}/>
+                <Accountant onClick={sendItems} onAdd={onAdd} data={data} showStock={false} showDetail={false}/>
+                <button onClick={sendItems} className='btn'>Agregar al carrito</button>
             </div>
         </div>
-
-    )
+    )  
 }
 
 export { ItemDetail };

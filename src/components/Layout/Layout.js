@@ -3,6 +3,7 @@ import { Header, Footer } from '../../screens/componentsRoutes'
 import './Layout.css'
 
 const Layout = ({ children, showHeader = true, showFooter = true }) => {
+    
     return (
         <>
             { showHeader && <Header /> }

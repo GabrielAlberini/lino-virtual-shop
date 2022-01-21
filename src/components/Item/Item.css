@@ -38,13 +38,8 @@
     font-weight: bold;
 }
 
-.container-items {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    justify-content: center;
+.item-price {
+    color:rgb(8, 12, 255);
 }
 
 button {

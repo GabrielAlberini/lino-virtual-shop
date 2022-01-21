@@ -3,22 +3,28 @@ import './Accountant.css'
 import { Button } from '@material-ui/core';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { Link } from 'react-router-dom';
 
-const Accountant = ({data, sumarTotal, restarTotal, showStock = true, showDetail = true}) => {
+const Accountant = ({data, onAdd, showStock = true}) => {
     
-    const { id, stock } = data; 
+    const { stock } = data;
 
     const [mount, setMount] = useState(0)
     const [stockCurrent, setStockCurrent] = useState(stock)
     const [showUnit, setShowUnit] = useState(false)
+    const [itemCart, setItemCart] = useState({
+        img : data.img,
+        name : data.name,
+        id: data.id,
+        quantify : 0
+    })
 
     const addMount = () => {
         if(mount < stock ) {
-            setMount(mount + 1)
+            let totalCantidad = mount + 1;
+            setMount(totalCantidad)
+            onAdd(mount + 1)
             setStockCurrent(stockCurrent - 1)
             setShowUnit(true)  
-            sumarTotal(mount, 1)
         }
     }
 
@@ -26,7 +32,6 @@ const Accountant = ({data, sumarTotal, restarTotal, showStock = true, showDetail
         if(mount > 0 ) {
             setMount(mount - 1)
             setStockCurrent(stockCurrent + 1)
-            restarTotal(mount, 1)
         }
         if(mount === 1) {
             setShowUnit(false)
@@ -43,14 +48,6 @@ const Accountant = ({data, sumarTotal, restarTotal, showStock = true, showDetail
             <p>{mount}{showUnit === true ? " unidad": null}</p>
             <Button onClick={addMount}><AddIcon/></Button>
             </div>
-            <Link to="/cart">
-                <button className='btn'>Agregar al carrito</button>
-            </Link>
-            {
-                showDetail && <Link to={`/products/category/${id}`}>
-                <button className='btn btn-detail'>Ver producto</button>
-                </Link>
-            }
         </div>
     )
 }

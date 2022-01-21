@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { ListItems } from "../ListItems/ListItems"
 import './ContainerListItems.css'
 import { API } from "../../API";
-import CircularProgress from '@mui/material/CircularProgress';
+// import CircularProgress from '@mui/material/CircularProgress';
+import { LinearProgress } from "@mui/material";
 
 
 const ContainerListItems = () => {
@@ -15,7 +16,7 @@ const ContainerListItems = () => {
         new Promise((resolve, reject) => {
             setTimeout( ()=> {
                 resolve(API);
-            }, 1000)
+            }, 500)
         }).then((data) => {
             setProducts(data);
         }).catch((reject)=> {
@@ -30,7 +31,7 @@ const ContainerListItems = () => {
              {
                  loader
                  ?
-                 <CircularProgress className="loader"/>
+                    <LinearProgress className="loader" color="success" />
                  :
                  <>
                  <div className='container-home-title'>

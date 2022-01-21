@@ -2,11 +2,10 @@ import './CardWidget.css'
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import { Button } from '@mui/material';
 
-const CardWidget = ({children}) => {
+const CardWidget = () => {
     return(
         <Button>
             <LocalGroceryStoreIcon />
-            {children}
         </Button>
     )
 }

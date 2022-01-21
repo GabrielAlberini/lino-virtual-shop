@@ -1,30 +1,33 @@
 import { React } from "react";
 import './Item.css'
 import { Accountant } from "../Accountant/Accountant";
+import { Link } from "react-router-dom";
 
 const Item = ({data}) => {  
-    
-    const { name, img, description } = data;
+    const {id, name, img, description, price, moodOfSale } = data;
 
-    const onAdd = (value, num) => {
-        let total = value + num;
-        return console.log(total)
-    }
-    const onLess = (value, num) => {
-        let total = value - num;
-        return console.log(total)
-    }
-    
+    const onAdd = (value) => {
+        console.log("items agregados ", value)
+    };
+
     return(
         <div className='item'>
             <div className='container-item-img'>
                 <img className='item-img' src={`../../assets/${img}`} alt={name} />
             </div>
             <h3>{name}</h3>
+            <span className="item-price">${price}</span>
+            <span> x {moodOfSale}</span>
             <p>{description}</p>
-            <Accountant restarTotal={onLess} sumarTotal={onAdd} data={data}/> 
+            <Accountant data={data} onAdd={onAdd}/> 
+            <Link to="/cart">
+                <button className='btn'>Agregar al carrito</button>
+            </Link>
+            <Link to={`/products/category/${id}`}>
+            <button className='btn btn-detail'>Ver producto</button>
+            </Link>
         </div>
     )
 }
 
-export { Item }
+export { Item } 

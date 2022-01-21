@@ -21,9 +21,8 @@ const ContainerItemDetail = () => {
             getProducts.then((data) => {
                 data.filter((resultProduct) => {
                     if(resultProduct.id === parseInt(id)){
-                        setProducts(resultProduct)
+                        return setProducts(resultProduct)
                     }
-                    return setProducts(resultProduct)
                 })  
             }).catch((err) => {
                 console.log(err.message)
@@ -31,7 +30,6 @@ const ContainerItemDetail = () => {
                 setLoader(false)
             })
         }, 500);
-        
     }, [id]);
 
     return (
