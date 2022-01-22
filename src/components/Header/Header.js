@@ -14,31 +14,31 @@ const Header = () => {
    const {theme, changeTheme} = useContext(ThemeContext)
    
     return(
-        <AppBar className={theme ? "light-mood" : "dark-mood"} position="static">
-         <nav >
-             <Link to='/'>
-               <div className="container-logo">
-                  <img src="../../assets/lino-logo.jpg" alt="logo"/>
-               </div>
-             </Link>
-             <ul className="container-list">
-                 <Link to='/'>
-                    <li><Button variant="outlined">Home</Button></li>
-                 </Link>
-                 <Link to='/products'>
-                    <li><Button variant="outlined">Products</Button></li>
-                 </Link>
-                 <Link to='/contact'>
-                    <li><Button variant="outlined">Contact</Button></li>
-                 </Link>
-                 <Link to='/aboutus'>
-                    <li><Button variant="outlined">About Us</Button></li>
-                 </Link>
-                  <Switch  defaultChecked onClick={changeTheme} />
-                 <CardWidget />
-             </ul>
-         </nav>
-         </AppBar>
+      <AppBar className={theme ? "light-mood" : "dark-mood"} position="static">
+      <nav >
+            <Link to='/'>
+            <div className="container-logo">
+               <img src="../../assets/lino-logo.jpg" alt="logo"/>
+            </div>
+            </Link>
+            <ul className="container-list">
+               <Link to='/'>
+                  <li><Button variant="outlined">Home</Button></li>
+               </Link>
+               <Link to='/products'>
+                  <li><Button variant="outlined">Products</Button></li>
+               </Link>
+               <Link to='/contact'>
+                  <li><Button variant="outlined">Contact</Button></li>
+               </Link>
+               <Link to='/aboutus'>
+                  <li><Button variant="outlined">About Us</Button></li>
+               </Link>
+               <CardWidget />
+            </ul>
+            <Switch  defaultChecked onClick={changeTheme} />
+      </nav>
+      </AppBar>
     )
 }
 

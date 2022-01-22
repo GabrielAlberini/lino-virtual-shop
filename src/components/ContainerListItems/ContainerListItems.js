@@ -4,13 +4,15 @@ import './ContainerListItems.css'
 import { API } from "../../API";
 // import CircularProgress from '@mui/material/CircularProgress';
 import { LinearProgress } from "@mui/material";
-
+import { useParams } from "react-router-dom";
+import { OptionProducts } from "../OptionProducts/OptionProducts";
+import { Title } from "../Title/Title"
 
 const ContainerListItems = () => {
 
     const [products, setProducts] = useState([]);
     const [loader, setLoader] = useState(true);
-    
+    const {category} = useParams()
 
     useEffect(()=> {
         new Promise((resolve, reject) => {
@@ -18,9 +20,17 @@ const ContainerListItems = () => {
                 resolve(API);
             }, 500)
         }).then((data) => {
-            setProducts(data);
-        }).catch((reject)=> {
-            alert(reject)
+            if (category) {
+                data.filter((resultProduct) => {
+                    if(resultProduct.category === category){
+                        setProducts(products => [...products, resultProduct])
+                    } 
+                }) 
+            } else {
+                setProducts(data);
+            }
+        }).catch((err)=> {
+            alert(err)
         }).finally(() => {
             setLoader(false);
         })
@@ -34,11 +44,8 @@ const ContainerListItems = () => {
                     <LinearProgress className="loader" color="success" />
                  :
                  <>
-                 <div className='container-home-title'>
-                    <h4 className='title'>Nuestros productos</h4>
-                    <span></span>
-                </div>
-                 <ListItems listItems={products}/>  
+                 <Title />
+                 <ListItems title={category} listItems={products}/>  
                  </>  
              }
          </div>

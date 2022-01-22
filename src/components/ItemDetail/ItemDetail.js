@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import './ItemDetail.css';
 import { Accountant } from "../Accountant/Accountant";
 import Arrow from '@mui/icons-material/ArrowForwardIos';
 import { CartContext } from "../../context/cartContext";
 
 const ItemDetail = ({data}) => {
-    const [itemCart, setItemCart] = useState({
+    const [itemCart] = useState({
         img : data.img,
         name : data.name,
         id: data.id,
@@ -13,9 +13,7 @@ const ItemDetail = ({data}) => {
         quantify : 0
     })
     
-    const {products, addProductsInCart} = useContext(CartContext)
-    
-    console.log(products)
+    const { addProductsInCart} = useContext(CartContext)
 
     const {id, 
         name, 

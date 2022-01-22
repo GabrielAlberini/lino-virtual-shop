@@ -9,7 +9,7 @@ const Cart = () => {
             <div className='container-section'>
                 Página de cart
             </div>
-        </Layout>
+        </Layout >
     )
 }
 
