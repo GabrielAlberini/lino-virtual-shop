@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
-import { ListItems } from "../ListItems/ListItems"
+import { React, useState, useEffect } from "react";
 import './ContainerListItems.css'
 import { API } from "../../API";
-// import CircularProgress from '@mui/material/CircularProgress';
+import { ListItems } from "../ListItems/ListItems"
 import { LinearProgress } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { OptionProducts } from "../OptionProducts/OptionProducts";
-import { Title } from "../Title/Title"
 
 const ContainerListItems = () => {
 
@@ -34,7 +31,7 @@ const ContainerListItems = () => {
         }).finally(() => {
             setLoader(false);
         })
-    }, [])
+    }, [category])
 
     return (
          <div className="container-list">
@@ -44,7 +41,6 @@ const ContainerListItems = () => {
                     <LinearProgress className="loader" color="success" />
                  :
                  <>
-                 <Title />
                  <ListItems title={category} listItems={products}/>  
                  </>  
              }

@@ -10,6 +10,7 @@ import { ItemCart } from "../ItemCart/ItemCart"
 const CardWidget = () => {
     const [show, setShow] = useState(false)
     const {products} = useContext(CartContext)
+    console.log("productsssss", products)
 
     
     const setShowCart = () => {
@@ -26,15 +27,18 @@ const CardWidget = () => {
                     <p><b>Precio</b></p>
                 </div>
                 {
+                    products.length === 0
+                    ?
+                    <p className='textCart'>No hay productos en el carrito.</p>
+                    :
                     products.map((product) => {
-                        console.log("product", product)
                         return (
                             <ItemCart key={product.id} data={product}/>
                         )
                     })
                 }
                 <Link to="/cart">
-                <Button>Ir a cart</Button>
+                    <Button>Ir a cart</Button>
                 </Link>
             </div>
         </div>

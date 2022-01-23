@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './ItemCart.css'
 
 const ItemCart = ({data}) => {
-    const [currentPrice, setCurrentPrice] = useState(0) 
     const {name, img, quantify, price} = data;
 
     return (

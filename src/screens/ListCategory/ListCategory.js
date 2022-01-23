@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import './ListCategory.css';
 import { Layout } from '../../components/Layout/Layout';
 import { useParams } from 'react-router-dom'
 import {ContainerListItems} from '../../components/ContainerListItems/ContainerListItems'
+import { Title } from '../../components/Title/Title';
 
 const ListCategory = () => {
     const {category} = useParams()
@@ -11,6 +11,7 @@ const ListCategory = () => {
     return (
         <Layout>
             <div className='container-section'>
+            <Title title={category} showTitle={true}/>
             < ContainerListItems showOptions={false}/>
             </div>
         </Layout>

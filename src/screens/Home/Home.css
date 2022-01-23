@@ -1,4 +1,4 @@
-.container-home-title {
+.container-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
     text-transform: capitalize;
 }
 
-.container-home-title > span {
+.container-title > span {
     width: 50px;
     height: 5px;
     background: coral;

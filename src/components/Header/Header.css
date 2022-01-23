@@ -50,5 +50,9 @@ nav ul a {
 }
 
 .dark-mood svg {
+    margin-left: 15px;
     fill: white;
+}
+.light-mood svg {
+    margin-left: 15px;
 }

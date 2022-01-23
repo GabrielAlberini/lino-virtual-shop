@@ -23,16 +23,13 @@ const Header = () => {
             </Link>
             <ul className="container-list">
                <Link to='/'>
-                  <li><Button variant="outlined">Home</Button></li>
-               </Link>
-               <Link to='/products'>
-                  <li><Button variant="outlined">Products</Button></li>
-               </Link>
-               <Link to='/contact'>
-                  <li><Button variant="outlined">Contact</Button></li>
+                  <li><Button variant="outlined">Inicio</Button></li>
                </Link>
                <Link to='/aboutus'>
-                  <li><Button variant="outlined">About Us</Button></li>
+                  <li><Button variant="outlined">¿Quiénes somos?</Button></li>
+               </Link>
+               <Link to='/contact'>
+                  <li><Button variant="outlined">Contacto</Button></li>
                </Link>
                <CardWidget />
             </ul>
