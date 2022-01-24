@@ -11,4 +11,24 @@ svg:hover {
 
 .textCart {
     color: black;
+    margin: 1rem;
+}
+
+.cont-total-price button{
+    margin: 1rem 0;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem;
+}
+
+.total-txt {
+    color: black;
+    padding: 1rem;
 }

@@ -10,7 +10,8 @@ const ContainerItemDetail = () => {
 
     const [products, setProducts] = useState([]);
     const [loader, setLoader] = useState(true);
-    const {id} = useParams([]);
+    const {id, category} = useParams()
+    console.log({id, category})
 
     useEffect(()=> {
         const getProducts = new Promise((resolve, reject) => {
@@ -20,7 +21,7 @@ const ContainerItemDetail = () => {
         setTimeout(()=> {
             getProducts.then((data) => {
                 data.filter((resultProduct) => {
-                    if(resultProduct.id === parseInt(id)){
+                    if(resultProduct.id === parseInt(id) && resultProduct.category === category){
                         return setProducts(resultProduct)
                     }
                 })  
@@ -30,7 +31,7 @@ const ContainerItemDetail = () => {
                 setLoader(false)
             })
         }, 500);
-    }, [id]);
+    }, [id, category]);
 
     return (
         <Layout>

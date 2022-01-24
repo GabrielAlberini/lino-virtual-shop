@@ -16,4 +16,4 @@ const ListItems = ({listItems}) => {
     )
 }
 
-export {ListItems}
+export { ListItems };

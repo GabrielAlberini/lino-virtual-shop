@@ -1,0 +1,38 @@
+.container-section {
+    margin-top: 6rem;
+    margin-left: 1rem;
+    min-height: 100vh;
+}
+
+.cont-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont-product-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.cont-product {
+    width: 50%;
+}
+
+.cont-pay {
+    width: 400px;
+    height: 100%;
+    background: #ccc;
+    padding: 2rem;
+}
+
+.cont-pay-text {
+    height: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

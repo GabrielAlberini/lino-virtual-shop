@@ -1,20 +1,11 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import './ItemDetail.css';
-import { Accountant } from "../Accountant/Accountant";
+// import { Accountant } from "../Accountant/Accountant";
 import Arrow from '@mui/icons-material/ArrowForwardIos';
-import { CartContext } from "../../context/cartContext";
+// import { CartContext } from "../../context/cartContext";
+import { CounterProducts } from "../CounterProducts/CounterProducts";
 
 const ItemDetail = ({data}) => {
-    const [itemCart] = useState({
-        img : data.img,
-        name : data.name,
-        id: data.id,
-        price: data.price,
-        quantify : 0
-    })
-    
-    const { addProductsInCart} = useContext(CartContext)
-
     const {id, 
         name, 
         description, 
@@ -23,14 +14,6 @@ const ItemDetail = ({data}) => {
         ingredientes, 
         price,
         moodOfSale} = data; 
-
-    const onAdd = (value) => {
-        itemCart.quantify = value;
-    }
-
-    const sendItems = () => {
-        addProductsInCart(itemCart)
-    }
 
     return(
         <div className="container-details">
@@ -45,8 +28,7 @@ const ItemDetail = ({data}) => {
                 <h3>{description}</h3>
                 <p>{details}</p>
                 <p><Arrow />{ingredientes}</p>
-                <Accountant onClick={sendItems} onAdd={onAdd} data={data} showStock={false} showDetail={false}/>
-                <button onClick={sendItems} className='btn'>Agregar al carrito</button>
+                <CounterProducts showDetail={false} data={data}/>
             </div>
         </div>
     )  

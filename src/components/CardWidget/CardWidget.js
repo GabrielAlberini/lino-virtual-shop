@@ -9,9 +9,8 @@ import { ItemCart } from "../ItemCart/ItemCart"
 
 const CardWidget = () => {
     const [show, setShow] = useState(false)
-    const {products} = useContext(CartContext)
+    const {products, totalPrice} = useContext(CartContext)
     console.log("productsssss", products)
-
     
     const setShowCart = () => {
         setShow(!show)
@@ -19,17 +18,16 @@ const CardWidget = () => {
 
     return(
         <div>
-            <LocalGroceryStoreIcon onClick={setShowCart}/>
-            <div className={`animate__bounce container-shop  ${show ? "" : "none"} `}>
-                <div className='titles-shop'>
-                    <p><b>Producto</b></p>
-                    <p><b>Cantidad</b></p>
-                    <p><b>Precio</b></p>
-                </div>
+            <>
+            <Button style={{marginLeft:10}} onClick={setShowCart}>
+                <LocalGroceryStoreIcon />
+            </Button>
+            </>
+            <div className={`container-shop  ${show ? "" : "none"}`}>
                 {
                     products.length === 0
                     ?
-                    <p className='textCart'>No hay productos en el carrito.</p>
+                    (<p className='textCart'><b>No hay productos en el carrito.</b></p>)
                     :
                     products.map((product) => {
                         return (
@@ -37,9 +35,15 @@ const CardWidget = () => {
                         )
                     })
                 }
-                <Link to="/cart">
-                    <Button>Ir a cart</Button>
-                </Link>
+                <div className='cont-total-price'>
+                    <div className='total-price'>
+                        <p>Total:</p>
+                        <p>${totalPrice}</p>
+                    </div>
+                    <Link to="/cart">
+                        <Button variant="contained" color="success">Finalizar compra</Button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

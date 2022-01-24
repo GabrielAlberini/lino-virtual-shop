@@ -4,15 +4,17 @@ const CartContext = createContext()
 
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const addProductsInCart = (product) => {
         setProducts([...products, product])
-        console.log("producto por props", products)
-    }
+        setTotalPrice(totalPrice => totalPrice + (product.price * product.quantify))
+    } 
     
     const statesCart = {
         products,
-        addProductsInCart
+        addProductsInCart,
+        totalPrice
     }
     
     return (

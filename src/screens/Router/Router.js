@@ -9,7 +9,7 @@ const Router = () => {
             <CartProvider>
                 <Routes>
                     <Route path='/' element={ <Home /> } />
-                    <Route path='/products/category/:id' element={<ContainerItemDetail /> } />
+                    <Route path='/products/:category/:id' element={<ContainerItemDetail /> } />
                     <Route path="/:category/" element={ <ListCategory /> }/>
                     <Route path='/aboutus' element={ <AboutUs /> } />
                     <Route path='/contact' element={ <Contact /> } />
