@@ -17,7 +17,7 @@ const Cart = () => {
     return (
         <Layout>
             <div className='container-section'>
-                <Title showTitle={true} title={"Cart"}/>
+                <Title className="title-card" showTitle={true} title={"Cart"}/>
                 {
                     products.length === 0
                     ?
@@ -41,13 +41,8 @@ const Cart = () => {
                         }
                     </div>
                     <div className='cont-pay'>
-                        <div className='cont-pay-text'>
-                            <p><b>TOTAL:</b></p>
-                            <p>${totalPrice}</p>
-                        </div>
-                        <Button variant="contained" color="success">Realizar pago</Button>
+                        <Form products={products} totalPrice={totalPrice}/> 
                     </div>
-                    <Form /> 
                 </div>
                 }
             </div>
