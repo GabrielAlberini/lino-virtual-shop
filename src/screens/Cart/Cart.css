@@ -36,3 +36,13 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    margin: 1rem;
+    padding: .4rem;
+}

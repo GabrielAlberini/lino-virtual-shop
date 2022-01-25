@@ -8,7 +8,7 @@ import { CounterProducts } from "../CounterProducts/CounterProducts";
 const ItemDetail = ({data}) => {
     const {id, 
         name, 
-        description, 
+        description,  
         details, 
         img, 
         ingredientes, 
@@ -24,7 +24,6 @@ const ItemDetail = ({data}) => {
                 <h1>{name}</h1>
                 <p>Se vende de a {moodOfSale}</p>
                 <h2>Precio: ${price}</h2>
-                <p className="sku-detail">SKU: {id}</p>
                 <h3>{description}</h3>
                 <p>{details}</p>
                 <p><Arrow />{ingredientes}</p>

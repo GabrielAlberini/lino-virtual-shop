@@ -3,35 +3,39 @@ import './ContainerItemDetail.css';
 import { Layout } from '../../components/Layout/Layout';
 import { ItemDetail } from '../../components/ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom';
-import { API } from '../../API';
 import CircularProgress from '@mui/material/CircularProgress';
+//Collection trae la colección entera (api) y getDocs los items.
+import { doc, getDoc } from 'firebase/firestore/lite';
+//Conexion a Firebase
+import { db } from '../../firebase';
 
 const ContainerItemDetail = () => {
 
     const [products, setProducts] = useState([]);
     const [loader, setLoader] = useState(true);
-    const {id, category} = useParams()
-    console.log({id, category})
+    const {id} = useParams()
+
+    async function getProducts(db) {
+        //Aquí debajo va en orden: La conexón, nombre de la colección y parametro para efectuar el filtro.
+        const docRef = doc(db, "API", id);
+        const docSnap = await getDoc(docRef);
+        console.log("productasdasd", docSnap)
+
+        if (docSnap.exists()) {
+            const product = docSnap.data();
+            product.id = id;
+            setProducts(product)
+            setLoader(false)
+        } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+    }
 
     useEffect(()=> {
-        const getProducts = new Promise((resolve, reject) => {
-            resolve(API)
-            reject("Falló la carga de la API")
-        })
-        setTimeout(()=> {
-            getProducts.then((data) => {
-                data.filter((resultProduct) => {
-                    if(resultProduct.id === parseInt(id) && resultProduct.category === category){
-                        return setProducts(resultProduct)
-                    }
-                })  
-            }).catch((err) => {
-                console.log(err.message)
-            }).finally(()=> {
-                setLoader(false)
-            })
-        }, 500);
-    }, [id, category]);
+        getProducts(db)
+    }, []);
+
 
     return (
         <Layout>

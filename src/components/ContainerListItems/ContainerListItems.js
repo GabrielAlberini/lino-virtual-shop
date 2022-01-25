@@ -1,9 +1,14 @@
 import { React, useState, useEffect } from "react";
 import './ContainerListItems.css'
-import { API } from "../../API";
+// import { API } from "../../API";
 import { ListItems } from "../ListItems/ListItems"
 import { LinearProgress } from "@mui/material";
 import { useParams } from "react-router-dom";
+//Firestore
+import { db } from '../../firebase';
+//Llamada a la base de datos
+import { getProducts } from '../../serviceFS'
+
 
 const ContainerListItems = () => {
 
@@ -12,16 +17,13 @@ const ContainerListItems = () => {
     const {category} = useParams()
 
     useEffect(()=> {
-        new Promise((resolve, reject) => {
-            setTimeout( ()=> {
-                resolve(API);
-            }, 500)
-        }).then((data) => {
+        getProducts(db).then((data) => {
             if (category) {
                 data.filter((resultProduct) => {
                     if(resultProduct.category === category){
                         setProducts(products => [...products, resultProduct])
                     } 
+                    return products;
                 }) 
             } else {
                 setProducts(data);
@@ -31,7 +33,7 @@ const ContainerListItems = () => {
         }).finally(() => {
             setLoader(false);
         })
-    }, [category])
+    }, [])
 
     return (
          <div className="container-list">

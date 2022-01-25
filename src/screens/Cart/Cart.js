@@ -6,6 +6,7 @@ import { CartContext } from "../../context/cartContext";
 import { ItemCart } from '../../components/ItemCart/ItemCart';
 import { Title } from '../../components/Title/Title';
 import { Button } from '@mui/material';
+import { Form } from '../../components/Form/Form';
 
 const Cart = () => {
 
@@ -23,29 +24,30 @@ const Cart = () => {
                     <h3>No hay productos en el carrito.</h3>
                     :
                     <div className='cont-flex'>
-                <div className='cont-product'>
-                    <div className='cont-product-cart'>
-                        <p>Producto</p>
-                        <p>Cantidad</p>
-                        <p>Precio</p>
+                    <div className='cont-product'>
+                        <div className='cont-product-cart'>
+                            <p>Producto</p>
+                            <p>Cantidad</p>
+                            <p>Precio</p>
+                        </div>
+                        {
+                            products.map((product, i)=> {
+                                return (
+                                    <>
+                                        <ItemCart key={product.id} data={product}/>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
-                    {
-                        products.map((product)=> {
-                            return (
-                                <>
-                                    <ItemCart key={product.id} data={product}/>
-                                </>
-                            )
-                        })
-                    }
-                </div>
-                <div className='cont-pay'>
-                    <div className='cont-pay-text'>
-                        <p><b>TOTAL:</b></p>
-                        <p>${totalPrice}</p>
+                    <div className='cont-pay'>
+                        <div className='cont-pay-text'>
+                            <p><b>TOTAL:</b></p>
+                            <p>${totalPrice}</p>
+                        </div>
+                        <Button variant="contained" color="success">Realizar pago</Button>
                     </div>
-                    <Button variant="contained" color="success">Realizar pago</Button>
-                </div>
+                    <Form /> 
                 </div>
                 }
             </div>
