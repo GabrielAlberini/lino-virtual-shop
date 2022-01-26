@@ -9,7 +9,7 @@ svg:hover {
     transition: all .2s ease;
 }
 
-.textCart {
+.text-cart-empty {
     color: black;
     margin: 1rem;
 }

@@ -9,7 +9,7 @@
 }
 
 .img-details {
-    width: 70%;
+    width: 100%;
 }
 
 .img-details > img {
@@ -38,4 +38,15 @@
 .details-txt > p {
     font-size: 1rem;
     margin: .5rem 0;
+}
+
+/*Dark mood*/
+
+.container-details-dark .details-txt > h1 {
+    color: black;
+}
+
+
+.container-details-dark .details-txt > h1 {
+    border-left: 10px solid white;
 }

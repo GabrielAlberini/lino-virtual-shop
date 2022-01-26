@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    margin: 1rem;
+    padding: .4rem;
+}
+
+.cont-pay-text {
+    height: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cont-pay {
+    width: 50%;
+    height: 100%;
+    background: #ccc;
+    padding: 2rem;
+}
+

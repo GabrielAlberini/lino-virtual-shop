@@ -11,9 +11,6 @@ const Form = ({products, totalPrice}) => {
         phone: null,
         mail: null,
     })
-    const [orderID, setOrderID] = useState("")
-
-    console.log(totalPrice)
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -24,13 +21,13 @@ const Form = ({products, totalPrice}) => {
         e.preventDefault()
         const order = {}
         order.buyer = buyer;
-        order.items = products
+        order.items = products;
         order.total = totalPrice;
         pushOrder(order)
-    } 
+    }
 
     const pushOrder = async(order) => {
-        //Conección con ordenes en firebase.
+        //Conección (db) con ordenes en firebase.
         const orderFiresbase = collection(db, 'orders')
         //Guardo la respuesta de la conección con la orden realizada.
         const orden = await addDoc(orderFiresbase, order) 

@@ -1,0 +1,39 @@
+.title-section {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.container-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 1rem 0;
+    text-transform: capitalize;
+}
+
+.container-title .title {
+    font-size: 2rem;
+    padding: .5rem;
+    position: relative;
+    color: black;
+}
+.container-title-dark .title {
+    font-size: 2rem;
+    padding: .5rem;
+    position: relative;
+    color: white;
+}
+
+.container-title > span {
+    width: 50px;
+    height: 5px;
+    background: coral;
+}
+
+.container-title-dark > span {
+    width: 50px;
+    height: 5px;
+    background: black;
+}
+

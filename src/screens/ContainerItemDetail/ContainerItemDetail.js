@@ -3,7 +3,7 @@ import './ContainerItemDetail.css';
 import { Layout } from '../../components/Layout/Layout';
 import { ItemDetail } from '../../components/ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom';
-import CircularProgress from '@mui/material/CircularProgress';
+import { CircularProgress } from '@material-ui/core';
 //Collection trae la colección entera (api) y getDocs los items.
 import { doc, getDoc } from 'firebase/firestore/lite';
 //Conexion a Firebase

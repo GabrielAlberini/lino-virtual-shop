@@ -1,24 +1,26 @@
-import React from "react";
+import React, {useContext} from "react";
 import './ItemDetail.css';
 // import { Accountant } from "../Accountant/Accountant";
 import Arrow from '@mui/icons-material/ArrowForwardIos';
 // import { CartContext } from "../../context/cartContext";
 import { CounterProducts } from "../CounterProducts/CounterProducts";
+import { ThemeContext } from "@emotion/react";
 
 const ItemDetail = ({data}) => {
-    const {id, 
-        name, 
+    const {name, 
         description,  
         details, 
         img, 
         ingredientes, 
         price,
         moodOfSale} = data; 
+    const {theme} = useContext(ThemeContext);
+
 
     return(
-        <div className="container-details">
+        <div className={`container-details ${theme ?  "" : "container-details-dark"}`}>
             <div className="img-details">
-                <img src={`../../assets/${img}`} alt="Imagen de producto"/>
+                <img src={img} alt="Imagen de producto"/>
             </div>
             <div className="details-txt">
                 <h1>{name}</h1>

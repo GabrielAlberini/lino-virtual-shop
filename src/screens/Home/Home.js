@@ -7,6 +7,7 @@ import { OptionProducts } from '../../components/OptionProducts/OptionProducts'
 import { Title } from '../../components/Title/Title'
  
 const Home = () => {
+
     return (
         <Layout>
             <Banner />

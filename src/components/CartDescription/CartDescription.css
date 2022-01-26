@@ -1,0 +1,10 @@
+.cont-price-cart {
+    margin: 1rem 0;
+    height: auto;
+    width: 100%;
+    background: #ccc;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}

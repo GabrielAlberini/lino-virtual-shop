@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Accountant.css'
 import { Button } from '@material-ui/core';
 import AddIcon from '@mui/icons-material/Add';
@@ -18,7 +18,8 @@ const Accountant = ({data, onAdd, showStock = true}) => {
             setMount(totalCantidad)
             onAdd(mount + 1)
             setStockCurrent(stockCurrent - 1)
-            setShowUnit(true)  
+            setShowUnit(true)
+
         }
     }
 

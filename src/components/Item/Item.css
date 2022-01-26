@@ -15,17 +15,6 @@
     border-radius: 5px;
 }
 
-.item-stock {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    background: black;
-    color: white;
-    padding: .5rem;
-    margin: .5rem;
-}
-
 .item-count {
     display: flex;
     justify-content: center;
@@ -71,4 +60,24 @@ button {
 
 a {
     text-decoration: none;
+}
+
+/*Dark mood*/
+
+.item-dark {
+    background: #ccc;
+}
+
+.item-dark > .item-price{
+    color: black;
+    font-weight: bold;
+}
+
+.item-dark > button {
+    background: black;
+    color: white;
+}
+
+.item-dark > button:hover {
+    background: rgb(58, 58, 58);
 }

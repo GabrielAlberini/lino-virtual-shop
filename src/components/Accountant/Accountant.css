@@ -1,0 +1,14 @@
+.item-stock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background: black;
+    color: white;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+    margin: auto; 
+}

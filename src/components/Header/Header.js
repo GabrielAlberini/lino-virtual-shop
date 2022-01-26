@@ -6,6 +6,7 @@ import { CardWidget } from "../CardWidget/CardWidget";
 import { Link } from 'react-router-dom';
 import { Switch } from '@mui/material';
 import { ThemeContext } from "../../context/themeContext"
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
    /*Para usar un contexto en un componente wrappeado en app necesitamos exportar primero
@@ -18,7 +19,7 @@ const Header = () => {
       <nav >
             <Link to='/'>
             <div className="container-logo">
-               <img src="../../assets/lino-logo.jpg" alt="logo"/>
+               <img src="https://i.ibb.co/SJZxvT0/lino-logo.jpg" alt="logo"/>
             </div>
             </Link>
             <ul className="container-list">
@@ -32,8 +33,14 @@ const Header = () => {
                   <li><Button variant="outlined">Contacto</Button></li>
                </Link>
                <CardWidget />
+            <div >
+               <Switch  defaultChecked onClick={changeTheme} />
+               <Button className="menu">
+                  <MenuIcon />
+               </Button>
+            </div>
             </ul>
-            <Switch  defaultChecked onClick={changeTheme} />
+            
       </nav>
       </AppBar>
     )

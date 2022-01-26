@@ -1,6 +1,5 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import './ContainerListItems.css'
-// import { API } from "../../API";
 import { ListItems } from "../ListItems/ListItems"
 import { LinearProgress } from "@mui/material";
 import { useParams } from "react-router-dom";
@@ -8,6 +7,8 @@ import { useParams } from "react-router-dom";
 import { db } from '../../firebase';
 //Llamada a la base de datos
 import { getProducts } from '../../serviceFS'
+//Theme Provider
+import { ThemeContext } from "../../context/themeContext"
 
 
 const ContainerListItems = () => {
@@ -15,6 +16,8 @@ const ContainerListItems = () => {
     const [products, setProducts] = useState([]);
     const [loader, setLoader] = useState(true);
     const {category} = useParams()
+    const {theme} = useContext(ThemeContext)
+
 
     useEffect(()=> {
         getProducts(db).then((data) => {
@@ -36,15 +39,15 @@ const ContainerListItems = () => {
     }, [])
 
     return (
-         <div className="container-list">
+         <div className={`container-item-list ${theme ?  "" : "container-item-list-dark"}`}>
              {
                  loader
                  ?
-                    <LinearProgress className="loader" color="success" />
+                <LinearProgress className="loader" color="success" />
                  :
                  <>
-                 <ListItems title={category} listItems={products}/>  
-                 </>  
+                <ListItems title={category} listItems={products}/>  
+                </> 
              }
          </div>
     )

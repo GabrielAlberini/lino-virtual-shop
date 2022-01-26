@@ -27,15 +27,18 @@ const CardWidget = () => {
                 {
                     products.length === 0
                     ?
-                    (<p className='textCart'><b>No hay productos en el carrito.</b></p>)
+                    <p className='text-cart-empty'><b>No hay productos en el carrito.</b></p>
                     :
-                    products.map((product) => {
-                        return (
-                            <ItemCart key={product.id} data={product}/>
-                        )
-                    })
-                }
-                <div className='cont-total-price'>
+                    <>
+                    {
+                        products.map((product) => {
+                            return (
+                                <ItemCart key={product.id} data={product}/>
+                            )
+                        })
+                        
+                    }
+                    <div className='cont-total-price'>
                     <div className='total-price'>
                         <p>Total:</p>
                         <p>${totalPrice}</p>
@@ -43,7 +46,11 @@ const CardWidget = () => {
                     <Link to="/cart">
                         <Button variant="contained" color="success">Finalizar compra</Button>
                     </Link>
-                </div>
+                    </div>
+                    </>
+                    
+                }
+                
             </div>
         </div>
     )

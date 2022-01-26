@@ -7,6 +7,7 @@ import { ItemCart } from '../../components/ItemCart/ItemCart';
 import { Title } from '../../components/Title/Title';
 import { Button } from '@mui/material';
 import { Form } from '../../components/Form/Form';
+import { CartDescription } from '../../components/CartDescription/CartDescription'
 
 const Cart = () => {
 
@@ -24,12 +25,7 @@ const Cart = () => {
                     <h3>No hay productos en el carrito.</h3>
                     :
                     <div className='cont-flex'>
-                    <div className='cont-product'>
-                        <div className='cont-product-cart'>
-                            <p>Producto</p>
-                            <p>Cantidad</p>
-                            <p>Precio</p>
-                        </div>
+                        <CartDescription>
                         {
                             products.map((product, i)=> {
                                 return (
@@ -39,7 +35,7 @@ const Cart = () => {
                                 )
                             })
                         }
-                    </div>
+                        </CartDescription>
                     <div className='cont-pay'>
                         <Form products={products} totalPrice={totalPrice}/> 
                     </div>
