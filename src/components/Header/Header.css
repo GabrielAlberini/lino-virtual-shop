@@ -63,6 +63,10 @@ nav ul a {
     margin-left: 15px;
 }
 
+.dark-mood .list-control {
+    background-color: rgb(53, 53, 53);
+}
+
 /*Menu hamburguesa*/
 nav > button:nth-child(1) {
     display: none;
