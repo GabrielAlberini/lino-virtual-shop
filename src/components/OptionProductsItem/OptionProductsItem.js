@@ -4,16 +4,13 @@ import { Link } from 'react-router-dom'
 import { Button } from '@mui/material';
 
 const OptionProductsItem = ({data}) => {
-    console.log(data)
-    const {title, body, className, button} = data;
-    console.log({title, body, className, button})
-
+    const {title, body, className, button, link} = data;
     return (
         <>
             <div className={className}>
                 <h3>{title}</h3>
                 <p>{body}</p>
-                <Link to="/congelados">
+                <Link to={`/${link}`}>
                     <Button className='button-option' variant="outlined" active={"generales"}>{button}</Button>
                 </Link>
             </div>

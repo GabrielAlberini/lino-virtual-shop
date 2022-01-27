@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUs.css'
 import { Layout } from '../../components/Layout/Layout'
-import { BannerAboutUs } from '../../components/BannerAboutUs/BannerAboutUs'
+import { BannerSection } from '../../components/BannerSection/BannerSection'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { ItemAboutUs } from '../../components/ItemAboutUs/ItemAboutUs'
 
@@ -30,7 +30,7 @@ const AboutUs = () => {
         <>
             <Layout>
                 <div className='about-us'>
-                    <BannerAboutUs />
+                    <BannerSection />
                     <div className='container-section section-about'>
                         <div className='container-info'>
                             <div className='container-info-text'>
@@ -43,8 +43,8 @@ const AboutUs = () => {
                         </div>
                         <div className='container-profiles'>
                             {
-                                dataProfile.map(item => {
-                                    return <ItemAboutUs data={item} />
+                                dataProfile.map((item, i) => {
+                                    return <ItemAboutUs key={i} data={item} />
                                 })
                             }
                         </div>

@@ -19,6 +19,6 @@ const Home = () => {
             </div>
         </Layout>
     )
-}
+} 
 
 export { Home };

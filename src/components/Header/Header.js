@@ -15,7 +15,7 @@ const Header = () => {
    const {theme, changeTheme} = useContext(ThemeContext)
    const [menuHam, setHam] = useState(false)
 
-   const handleState = (e) => {
+   const handleState = () => {
       setHam(!menuHam)
    }
    

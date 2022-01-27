@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Accountant.css'
 import { Button } from '@material-ui/core';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { CountContext } from '../../context/countContext';
 
 const Accountant = ({data, onAdd, showStock = true}) => {
     
@@ -10,7 +11,8 @@ const Accountant = ({data, onAdd, showStock = true}) => {
 
     const [mount, setMount] = useState(0)
     const [stockCurrent, setStockCurrent] = useState(stock)
-    const [showUnit, setShowUnit] = useState(false)
+
+    const {key} = useContext(CountContext)
 
     const addMount = () => {
         if(mount < stock ) {
@@ -18,7 +20,6 @@ const Accountant = ({data, onAdd, showStock = true}) => {
             setMount(totalCantidad)
             onAdd(mount + 1)
             setStockCurrent(stockCurrent - 1)
-            setShowUnit(true)
         }
     }
 
@@ -26,9 +27,6 @@ const Accountant = ({data, onAdd, showStock = true}) => {
         if(mount > 0 ) {
             setMount(mount - 1)
             setStockCurrent(stockCurrent + 1)
-        }
-        if(mount === 1) {
-            setShowUnit(false)
         }
     }
 
@@ -39,7 +37,7 @@ const Accountant = ({data, onAdd, showStock = true}) => {
             }
             <div className="item-count">
             <Button onClick={lessMount}><RemoveIcon/></Button>
-            <p>{mount}{showUnit === true ? " unidad": null}</p>
+            <p>{!key ? `${mount} unidad` : 0 }</p>
             <Button onClick={addMount}><AddIcon/></Button>
             </div>
         </div>

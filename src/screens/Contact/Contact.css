@@ -1,3 +1,29 @@
-.vocales {
-    background: red;
+.contact .container-banner-section {
+    background-image: url("https://i.ibb.co/rM9g8k4/pexels-photo-2449543.jpg");
+    text-transform: capitalize;
+    font-size: 2.5rem;
+}
+
+.section-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.container-data-contact {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+.container-data-wsp  {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+
+@media screen and (max-width: 400px) {
+    .section-contact {
+        flex-direction: column;
+    }
 }

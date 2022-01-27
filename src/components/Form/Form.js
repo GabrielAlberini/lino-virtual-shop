@@ -18,7 +18,6 @@ const Form = ({products, totalPrice}) => {
     }
 
     const sendDates = (e) => {
-        e.preventDefault()
         const order = {}
         order.buyer = buyer;
         order.items = products;
@@ -45,6 +44,7 @@ const Form = ({products, totalPrice}) => {
                     placeholder='Nombre' 
                     value={buyer.name} 
                     onChange={handleChange} 
+                    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" 
                     required 
                     autoFocus/>
                 <input 
@@ -62,6 +62,7 @@ const Form = ({products, totalPrice}) => {
                     placeholder='Email' 
                     value={buyer.mail} 
                     onChange={handleChange} 
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                     required/>
                 <div className='cont-pay-text'>
                     <p><b>TOTAL:</b></p>

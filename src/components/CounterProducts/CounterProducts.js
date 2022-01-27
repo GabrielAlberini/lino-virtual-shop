@@ -3,8 +3,10 @@ import './CounterProducts.css'
 import { Accountant } from '../Accountant/Accountant'
 import { CartContext } from '../../context/cartContext'
 import { Link } from 'react-router-dom'
+import { CountContext } from '../../context/countContext'
 
 const CounterProducts = ({data, showDetail = true}) => {
+    console.log(data)
 
     const [itemCart] = useState({
         img : data.img,
@@ -14,16 +16,24 @@ const CounterProducts = ({data, showDetail = true}) => {
         quantify : 0
     })
 
-        const {addProductsInCart} = useContext(CartContext)
+    const {addProductsInCart} = useContext(CartContext)
+    const {changeSwitch} = useContext(CountContext)
 
-        const onAdd = (value) => {
-            itemCart.quantify = value;
-        }
 
-    
-        const sendItems = () => {
-            addProductsInCart(itemCart)
-        }
+    const onAdd = (value) => {
+        itemCart.quantify = value;
+    }
+
+    const sendItems = () => {
+        if(itemCart.quantify > 0) {
+            data.filter((item)=> {
+                if(item.id !== itemCart.id) {
+                    addProductsInCart(itemCart)
+                    changeSwitch(true)
+                }
+            })
+        } 
+    }
 
     return (
         <>

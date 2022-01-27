@@ -10,7 +10,6 @@ import { getProducts } from '../../serviceFS'
 //Theme Provider
 import { ThemeContext } from "../../context/themeContext"
 
-
 const ContainerListItems = () => {
 
     const [products, setProducts] = useState([]);

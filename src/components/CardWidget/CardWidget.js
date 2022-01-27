@@ -5,15 +5,19 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom'
 import { CartContext } from "../../context/cartContext";
 import { ItemCart } from "../ItemCart/ItemCart"
+import { CountContext } from '../../context/countContext';
 
 
 const CardWidget = () => {
     const [show, setShow] = useState(false)
     const {products, totalPrice} = useContext(CartContext)
-    console.log("productsssss", products)
+    const {key, changeSwitchCart} = useContext(CountContext)
+
+
     
     const setShowCart = () => {
         setShow(!show)
+        changeSwitchCart(!key)
     }
 
     return(
@@ -23,7 +27,7 @@ const CardWidget = () => {
                 <LocalGroceryStoreIcon />
             </Button>
             </div>
-            <div className={`container-shop  ${show ? "" : "none"}`}>
+            <div className={`container-shop  ${key ? "" : "none"}`}>
                 {
                     products.length === 0
                     ?
