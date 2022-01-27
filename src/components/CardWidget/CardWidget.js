@@ -18,11 +18,11 @@ const CardWidget = () => {
 
     return(
         <div>
-            <>
+            <div className='icon-shop'>
             <Button style={{marginLeft:10}} onClick={setShowCart}>
                 <LocalGroceryStoreIcon />
             </Button>
-            </>
+            </div>
             <div className={`container-shop  ${show ? "" : "none"}`}>
                 {
                     products.length === 0
@@ -48,7 +48,6 @@ const CardWidget = () => {
                     </Link>
                     </div>
                     </>
-                    
                 }
                 
             </div>

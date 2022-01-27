@@ -1,12 +1,25 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
 import './OptionProducts.css'
 import { ThemeContext } from "../../context/themeContext"
+import { OptionProductsItem } from '../OptionProductsItem/OptionProductsItem';
 
 
 const OptionProducts = ({showOption = true}) => {
     const {theme} = useContext(ThemeContext)
+    const dataOption = [
+        {
+            title: "CONGELADOS",
+            body: "En esta sección encontrarás nuestros productos freezados. Todos 100% artesanales y listos para comer o guardar hasta que lo precises.",
+            className: "select-frozen",
+            button: "Congelados"
+        },
+        {
+            title: "PANIFICADOS",
+            body: "Aquí podrás ver con que productos panificados contamos. Pero ojito, hay que estar atentos porque no hacemos todo el tiempo. Solo en ocaciones especiales.",
+            className: "select-baked",
+            button: "Panificados"
+        }
+    ]
 
     return (
         <>
@@ -14,16 +27,11 @@ const OptionProducts = ({showOption = true}) => {
             showOption
             &&
             <div className={`container-options ${theme ?  "" : "container-options-dark"}`}>
-                <div className="select-frozen">
-                <Link to="/congelados">
-                    <Button className='button-option' variant="outlined" active={"generales"}>Congelados</Button>
-                </Link>
-                </div>
-                <div className="select-baked">
-                <Link to="/panificados">
-                    <Button className='button-option' variant="outlined" active={"generales"}>Panificados</Button>
-                </Link>
-                </div>
+                {
+                    dataOption.map(item => {
+                        return <OptionProductsItem data={item}/>
+                    })
+                }
             </div>
         }
         </>

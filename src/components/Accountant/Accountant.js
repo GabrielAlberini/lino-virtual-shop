@@ -19,7 +19,6 @@ const Accountant = ({data, onAdd, showStock = true}) => {
             onAdd(mount + 1)
             setStockCurrent(stockCurrent - 1)
             setShowUnit(true)
-
         }
     }
 

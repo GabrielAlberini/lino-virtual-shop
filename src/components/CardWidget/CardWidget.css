@@ -1,6 +1,5 @@
 svg {
     color: black;
-    margin-right: 15px;
     position: relative;
     cursor: pointer;
 }
@@ -31,4 +30,13 @@ svg:hover {
 .total-txt {
     color: black;
     padding: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    svg {
+        color: black;
+        margin-right: 0;
+        position: relative;
+        cursor: pointer;
+    }
 }

@@ -1,13 +1,14 @@
 .container-shop {
     position: absolute;
     top: 70px;
-    right: 20%;
+    right: 30px;
     width: 350px;
     max-height: 500px;
     overflow-y: auto;
     z-index: 6000;
     box-shadow: 1px 1px 5px rgb(128, 128, 128);
     background: white;
+    transition: all .3s ease;
 }
 
 .none {
@@ -43,9 +44,11 @@
     align-items: center;
     color: black;
 }
+
 .cont-txt *{
     margin-left: 10px;
 }
+
 .cont-txt > h5 {
     margin-bottom: .5rem;
 }
@@ -58,4 +61,18 @@
     justify-content: space-between;
     padding: 10px;
     background: rgb(228, 228, 228);
+}
+
+@media screen and (max-width: 400px) {
+    .container-shop {
+        position: absolute;
+        top: 75px;
+        right: 10px;
+        width: 270px;
+        max-height: 500px;
+        overflow-y: auto;
+        z-index: 6000;
+        box-shadow: 1px 1px 5px rgb(128, 128, 128);
+        background: white;
+    }
 }

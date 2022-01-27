@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useState, useContext} from "react";
 import './Header.css';
 import { AppBar } from "@material-ui/core";
 import { Button } from "@material-ui/core";
@@ -13,34 +13,38 @@ const Header = () => {
    el hooks: useContext, despues los estados declarados en Themecontex en objeto data y por ultimo 
    ThemeContext*/
    const {theme, changeTheme} = useContext(ThemeContext)
+   const [menuHam, setHam] = useState(false)
+
+   const handleState = (e) => {
+      setHam(!menuHam)
+   }
    
     return(
       <AppBar className={theme ? "light-mood" : "dark-mood"} position="static">
-      <nav >
+      <nav>
+         <Button className="menu" onClick={handleState} >
+            <MenuIcon/>
+         </Button>
+         <Link to='/'>
+         <div className="container-logo">
+            <img src="https://i.ibb.co/SJZxvT0/lino-logo.jpg" alt="logo"/>
+         </div>
+         </Link>
+         <ul className={`container-list ${menuHam ? 'menuHam' : ''}`}>
             <Link to='/'>
-            <div className="container-logo">
-               <img src="https://i.ibb.co/SJZxvT0/lino-logo.jpg" alt="logo"/>
-            </div>
+               <li><Button variant="outlined">Inicio</Button></li>
             </Link>
-            <ul className="container-list">
-               <Link to='/'>
-                  <li><Button variant="outlined">Inicio</Button></li>
-               </Link>
-               <Link to='/aboutus'>
-                  <li><Button variant="outlined">¿Quiénes somos?</Button></li>
-               </Link>
-               <Link to='/contact'>
-                  <li><Button variant="outlined">Contacto</Button></li>
-               </Link>
-               <CardWidget />
-            <div >
-               <Switch  defaultChecked onClick={changeTheme} />
-               <Button className="menu">
-                  <MenuIcon />
-               </Button>
+            <Link to='/aboutus'>
+               <li><Button variant="outlined">¿Quiénes somos?</Button></li>
+            </Link>
+            <Link to='/contact'>
+               <li><Button variant="outlined">Contacto</Button></li>
+            </Link>
+            <div className="list-control">
+            <Switch  color="default" onClick={changeTheme} />
             </div>
-            </ul>
-            
+         </ul>
+         <CardWidget />
       </nav>
       </AppBar>
     )

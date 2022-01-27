@@ -1,3 +1,7 @@
+header {
+ background: transparent;
+}
+
 nav {
     width: 100%;
     display: flex;
@@ -11,7 +15,6 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    align-items: center;
 }
 
 /*Change mood*/
@@ -35,7 +38,7 @@ nav ul a {
 }
 
 .light-mood > nav {
-    background: rgb(172, 250, 172);
+    background: rgba(172, 250, 172, 0.822);
 }
 
 .dark-mood > nav {
@@ -60,23 +63,53 @@ nav ul a {
     margin-left: 15px;
 }
 
-.menu {
+/*Menu hamburguesa*/
+nav > button:nth-child(1) {
     display: none;
 }
 
 @media screen and (max-width: 400px) {
-    nav {
-        display: block;
-        flex-direction: column;
-    }
-    nav ul {
+    header {
+        position: relative;
         display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        position: absolute;
         flex-direction: column;
+        background: rgba(172, 250, 172, 0.822);
+        top: 5.419rem;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
     }
-    nav ul li {
-        margin: 1rem 0;
+    
+    nav ul > a {
+        width: 100%;
+        margin: 0;
     }
-    .menu {
-        display: block;
+    nav ul > a > li {
+        width: 100%;
+    }
+    nav ul > a > li > button {
+        width: 100%;
+        border: none !important;
+        border-radius: 0px !important;
+    }
+    nav ul > a > li > button > span {
+        padding: .5rem;
+        
+    }
+    .MuiButtonBase-root.MuiButton-root.MuiButton-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menuHam {
+        transition: all 1s ease;
+        opacity: 1;
+        pointer-events: auto;
+        animation-duration: 1s;
     }
 }

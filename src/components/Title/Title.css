@@ -37,3 +37,8 @@
     background: black;
 }
 
+@media screen and (max-width: 400px) {
+    .container-title > .title {
+        font-size: 1.5rem;
+    }
+}

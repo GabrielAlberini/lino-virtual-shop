@@ -1,0 +1,109 @@
+.section-about {
+    margin: 0;
+}
+
+.container-info {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container-info-text {
+    text-align: left;
+    width: 50%;
+}
+
+.containter-info-img {
+    width: 50%;
+}
+
+.containter-info-img > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.container-profiles {
+    background: rgb(238, 238, 238);
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-profiles-item {
+    background-color: white;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 1px 1px 10px rgb(209, 209, 209);
+}
+
+.container-profiles-img {
+    width: 150px;
+}
+
+.container-profiles-img > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.container-sr {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://i.ibb.co/qdBRMkc/bastoncitos.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.container-sr-item {
+    height: 100%;
+    width: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(204, 204, 204, 0.555);
+    padding: 1rem;
+}
+
+.container-sr-item p{
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.container-sr-item svg{
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 400px) {
+    .container-info {
+        flex-direction: column-reverse;
+    }
+
+    .container-info-text {
+        width: 100%;
+    }
+
+    .containter-info-img {
+        width: 100%;
+    }
+
+    .container-profiles-item {
+        height: 230px;
+    }
+
+    .container-profiles-img {
+        width: 100px;
+    }
+    
+    .container-profiles-img > img {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+}
