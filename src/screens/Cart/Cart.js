@@ -16,7 +16,7 @@ const Cart = () => {
 
     return (
         <Layout>
-            <div className='container-section'>
+            <div className='container-section section-cart'>
                 <Title className="title-card" showTitle={true} title={"Cart"}/>
                 {
                     products.length === 0

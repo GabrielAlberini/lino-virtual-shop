@@ -37,7 +37,7 @@ const Accountant = ({data, onAdd, showStock = true}) => {
             }
             <div className="item-count">
             <Button onClick={lessMount}><RemoveIcon/></Button>
-            <p>{!key ? `${mount} unidad` : 0 }</p>
+            <p>{mount} unidad</p>
             <Button onClick={addMount}><AddIcon/></Button>
             </div>
         </div>

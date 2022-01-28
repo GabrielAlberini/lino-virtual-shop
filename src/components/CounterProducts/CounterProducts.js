@@ -3,10 +3,9 @@ import './CounterProducts.css'
 import { Accountant } from '../Accountant/Accountant'
 import { CartContext } from '../../context/cartContext'
 import { Link } from 'react-router-dom'
-import { CountContext } from '../../context/countContext'
+import { CountContext } from '../../context/countContext';
 
 const CounterProducts = ({data, showDetail = true}) => {
-    console.log(data)
 
     const [itemCart] = useState({
         img : data.img,
@@ -14,7 +13,9 @@ const CounterProducts = ({data, showDetail = true}) => {
         id: data.id,
         price: data.price,
         quantify : 0
-    })
+    });
+    const {products} = useContext(CartContext)
+    console.log("Products desde contador ", products)
 
     const {addProductsInCart} = useContext(CartContext)
     const {changeSwitch} = useContext(CountContext)
@@ -26,12 +27,9 @@ const CounterProducts = ({data, showDetail = true}) => {
 
     const sendItems = () => {
         if(itemCart.quantify > 0) {
-            data.filter((item)=> {
-                if(item.id !== itemCart.id) {
-                    addProductsInCart(itemCart)
-                    changeSwitch(true)
-                }
-            })
+            addProductsInCart(itemCart)
+            changeSwitch(true)
+            
         } 
     }
 

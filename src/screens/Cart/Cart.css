@@ -1,7 +1,11 @@
+.section-cart {
+    margin-top: 7rem;
+}
+
 .cont-flex {
     display: flex;
     justify-content: space-around;
-    gap: 2rem;
+    gap: 5rem;
     margin: 2rem;
 }
 
@@ -17,6 +21,17 @@
     width: 50%;
 }
 
-
+@media screen and (max-width: 400px) {
+    .cont-flex {
+        gap: 3rem;
+        flex-direction: column;
+    }
+    .cont-product {
+        width: 100%;
+    }
+    .cont-flex .cont-pay {
+        width: 100%;
+    }
+}
 
 

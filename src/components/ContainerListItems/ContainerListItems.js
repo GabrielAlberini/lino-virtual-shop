@@ -1,7 +1,7 @@
 import { React, useState, useEffect, useContext } from "react";
 import './ContainerListItems.css'
 import { ListItems } from "../ListItems/ListItems"
-import { LinearProgress } from "@mui/material";
+// import { LinearProgress } from "@mui/material";
 import { useParams } from "react-router-dom";
 //Firestore
 import { db } from '../../firebase';
@@ -9,6 +9,7 @@ import { db } from '../../firebase';
 import { getProducts } from '../../serviceFS'
 //Theme Provider
 import { ThemeContext } from "../../context/themeContext"
+import { CountContext } from "../../context/countContext"
 
 const ContainerListItems = () => {
 
@@ -16,6 +17,7 @@ const ContainerListItems = () => {
     const [loader, setLoader] = useState(true);
     const {category} = useParams()
     const {theme} = useContext(ThemeContext)
+    const { key } = useContext(CountContext)
 
 
     useEffect(()=> {
@@ -42,7 +44,8 @@ const ContainerListItems = () => {
              {
                  loader
                  ?
-                <LinearProgress className="loader" color="success" />
+                 key
+                // <LinearProgress className="loader" color="success" />
                  :
                  <>
                 <ListItems title={category} listItems={products}/>  

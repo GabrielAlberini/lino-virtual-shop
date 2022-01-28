@@ -34,14 +34,20 @@
 }
 
 .container-profiles-item {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     background-color: white;
-    margin: 1rem;
+    margin: 1rem; 
     padding: 2rem;
     box-shadow: 1px 1px 10px rgb(209, 209, 209);
 }
 
 .container-profiles-img {
-    width: 150px;
+    width: 100px;
 }
 
 .container-profiles-img > img {
@@ -91,6 +97,12 @@
 
     .containter-info-img {
         width: 100%;
+    }
+
+    .container-profiles-item {
+        margin: 1rem;
+        padding: 1rem;
+        box-shadow: 1px 1px 10px rgb(209, 209, 209);
     }
 
     .container-profiles-item {
