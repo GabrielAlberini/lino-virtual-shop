@@ -3,7 +3,6 @@ import './Item.css'
 import { CounterProducts } from "../CounterProducts/CounterProducts";
 import { ThemeContext } from "../../context/themeContext"
 
-
 const Item = ({data}) => { 
     const {name, img, description, price, moodOfSale } = data;
     const {theme} = useContext(ThemeContext)

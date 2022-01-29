@@ -19,7 +19,6 @@ const ContainerItemDetail = () => {
         //Aquí debajo va en orden: La conexón, nombre de la colección y parametro para efectuar el filtro.
         const docRef = doc(db, "API", id);
         const docSnap = await getDoc(docRef);
-        console.log("productasdasd", docSnap)
 
         if (docSnap.exists()) {
             const product = docSnap.data();

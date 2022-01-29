@@ -14,6 +14,7 @@ const CounterProducts = ({data, showDetail = true}) => {
         price: data.price,
         quantify : 0
     });
+    
     const {products} = useContext(CartContext)
     console.log("Products desde contador ", products)
 
@@ -29,7 +30,6 @@ const CounterProducts = ({data, showDetail = true}) => {
         if(itemCart.quantify > 0) {
             addProductsInCart(itemCart)
             changeSwitch(true)
-            
         } 
     }
 

@@ -12,8 +12,6 @@ const Accountant = ({data, onAdd, showStock = true}) => {
     const [mount, setMount] = useState(0)
     const [stockCurrent, setStockCurrent] = useState(stock)
 
-    const {key} = useContext(CountContext)
-
     const addMount = () => {
         if(mount < stock ) {
             let totalCantidad = mount + 1;

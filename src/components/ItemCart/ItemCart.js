@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './ItemCart.css'
+// import { CartContext } from '../../context/cartContext'
 
 const ItemCart = ({data}) => {
-    const {name, img, quantify, price} = data;
+    const {id, name, img, quantify, price} = data; 
+    // const { deleteProductOfCart } = useContext(CartContext)
     
     return ( 
         <div className='cart-shop'>
@@ -13,7 +15,7 @@ const ItemCart = ({data}) => {
                 <h5>{name}</h5>
                 <p>Cant: {quantify}</p>
                 <p>${price}</p>
-                <button className='deleteItem'>X</button>
+                <button name={id} type='checkbox' className='delete-item'>X</button>
             </div>
         </div>
     )

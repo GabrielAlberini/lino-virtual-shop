@@ -4,6 +4,7 @@ const CountContext = createContext();
  
 const CountProvider = ({children}) => {
     const [key, setKey] = useState(false);
+    const [stateLouder, setStateLouder] = useState(true);
     
     const changeSwitch = () => {
         setKey(true)
@@ -13,10 +14,16 @@ const CountProvider = ({children}) => {
         setKey(!key)
     }
 
+    const stateLouderState = () => {
+        setStateLouder(!stateLouder)
+    }
+
     const data = {
         key,
         changeSwitch,
-        changeSwitchCart
+        changeSwitchCart,
+        stateLouderState,
+        stateLouder
     } 
 
     return (

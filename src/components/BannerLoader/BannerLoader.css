@@ -1,0 +1,14 @@
+.container-loader {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 6000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-loader svg {
+    color: green;
+}
