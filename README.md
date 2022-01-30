@@ -20,5 +20,5 @@ En paralelo, hablando con un amigo que tiene un emprendimiento de comida vegana 
 - React Hooks.
 - Firebase - Firestore.
 
-##Agradecimientos:
+## Agradecimientos:
 Demás esta decir que quien quiera puede clonar el proyecto para luego darme en forma de feedback todas las sugerencias que tengan. Muchas gracias por llegar hasta aquí.
