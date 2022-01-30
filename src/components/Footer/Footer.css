@@ -1,13 +1,47 @@
 .footer {
     width: 100%;
     color: white;
-    background: black;
+    background: rgb(44, 44, 44);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 3rem;
+}
+
+.footer > div {
+    justify-self: flex-start;
+    text-align: left;
+}
+
+.footer > div:nth-child(1) {
+    text-align: center;
+}
+
+.footer > div:nth-child(1) p {
+    margin-bottom: 1rem;
+}
+
+.footer svg {
+    fill: orange;
+    text-align: center;
 }
 
 a {
     color: orange;
+}
+
+@media screen and (max-width: 400px) {
+    .footer {
+        flex-direction: column;
+        padding: 2rem 0;
+        margin: 0;
+    }
+    .footer > div {
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+    .footer > div:nth-child(4) {
+        padding: 0;
+        margin-bottom: 0;
+    }
 }

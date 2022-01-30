@@ -5,10 +5,11 @@
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+    margin-top: 4rem;
 }
 
 .img-details {
-    width: 100%;
+    width: 90%;
 }
 
 .img-details > img {

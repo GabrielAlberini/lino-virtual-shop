@@ -33,3 +33,20 @@
 .contact-form *::placeholder {
     color: black;
 }
+
+/*Dark mood*/
+
+.container-layout-dark .contact-form > input[type="text"],
+.container-layout-dark .contact-form > input[type="email"],
+.container-layout-dark .contact-form > textarea {
+    background-color: #ccc;
+    padding-left: .3rem;
+}
+
+.container-layout-dark .contact-form > input[type="submit"] {
+    background-color:  yellow;
+}
+
+.container-layout-dark .contact-form > input[type="submit"]:hover {
+    background-color:  rgb(255, 255, 154);
+}

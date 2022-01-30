@@ -20,6 +20,13 @@ const OptionProducts = ({showOption = true}) => {
             className: "select-baked",
             button: "Panificados",
             link: "panificados"
+        },
+        {
+            title: "POR ENCARGUE",
+            body: "Estos productos los realizamos en ocaciones especiales como eventos o fiestas patrias. Por eso a estar muy atentx",
+            className: "select-commission",
+            button: "Por encargue",
+            link: "encargues"
         }
     ]
 

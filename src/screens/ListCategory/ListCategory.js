@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom'
 import {ContainerListItems} from '../../components/ContainerListItems/ContainerListItems'
 
 const ListCategory = () => {
-    const {category} = useParams()
-    console.log(category)
 
     return (
         <Layout>

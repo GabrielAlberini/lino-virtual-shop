@@ -7,16 +7,9 @@ import { CounterProducts } from "../CounterProducts/CounterProducts";
 import { ThemeContext } from "@emotion/react";
 
 const ItemDetail = ({data}) => {
-    const {name, 
-        description,  
-        details, 
-        img, 
-        ingredientes, 
-        price,
-        moodOfSale} = data; 
+    const {name, description, details, img, ingredientes, price, moodOfSale} = data; 
     const {theme} = useContext(ThemeContext);
-
-
+    
     return(
         <div className={`container-details ${theme ?  "" : "container-details-dark"}`}>
             <div className="img-details">

@@ -30,7 +30,7 @@ const AboutUs = () => {
         <>
             <Layout>
                 <div className='about-us'>
-                    <BannerSection />
+                    <BannerSection title={"¿Quienes somos?"}/>
                     <div className='container-section section-about'>
                         <div className='container-info'>
                             <div className='container-info-text'>

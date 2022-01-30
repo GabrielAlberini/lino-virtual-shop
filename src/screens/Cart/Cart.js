@@ -9,10 +9,7 @@ import { Form } from '../../components/Form/Form';
 import { CartDescription } from '../../components/CartDescription/CartDescription'
 
 const Cart = () => {
-
     const {products, totalPrice} = useContext(CartContext)
-
-    console.log("en cart", products)
 
     return (
         <Layout>

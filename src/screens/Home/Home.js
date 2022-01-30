@@ -10,8 +10,8 @@ import { CountContext } from '../../context/countContext'
 
  
 const Home = () => {
-
     const { stateLouder } = useContext(CountContext)
+    
     return (
         <Layout className="scroll-hidden">
             { stateLouder && <BannerLoader /> }

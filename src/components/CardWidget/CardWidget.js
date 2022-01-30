@@ -11,8 +11,7 @@ import { CountContext } from '../../context/countContext';
 const CardWidget = () => {
     const [show, setShow] = useState(false)
     const {products, totalPrice} = useContext(CartContext)
-    const {key, changeSwitchCart} = useContext(CountContext)
-
+    const {key, changeSwitchCart, deleteProductOfCart} = useContext(CountContext)
 
     
     const setShowCart = () => {
@@ -36,9 +35,8 @@ const CardWidget = () => {
                     <>
                     {
                         products.map((product) => {
-                            return (
-                                <ItemCart key={product.id} data={product}/>
-                            )
+                            console.log("Desde CardWidget", product)
+                            return (<ItemCart  key={product.id} data={product}/>)
                         })
                         
                     }

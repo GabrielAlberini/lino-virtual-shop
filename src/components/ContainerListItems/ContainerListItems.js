@@ -14,7 +14,7 @@ import { CountContext } from "../../context/countContext"
 const ContainerListItems = () => {
 
     const [products, setProducts] = useState([]);
-    const [loader, setLoader] = useState(true);
+    // const [loader, setLoader] = useState(true);
     const {category} = useParams()
     const {theme} = useContext(ThemeContext)
     const { stateLouderState, stateLouder } = useContext(CountContext)
@@ -36,20 +36,13 @@ const ContainerListItems = () => {
             alert(err)
         }).finally(() => {
             stateLouderState()
-            setLoader(false);
         })
     }, [])
 
     return (
          <div className={`container-item-list ${theme ?  "" : "container-item-list-dark"}`}>
              {
-                 loader
-                 ?
-                 stateLouder
-                 :
-                 <>
-                <ListItems title={category} listItems={products}/>  
-                </> 
+                stateLouder || <ListItems title={category} listItems={products}/>
              }
          </div>
     )

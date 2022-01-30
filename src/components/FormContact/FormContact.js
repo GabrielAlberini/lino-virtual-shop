@@ -2,6 +2,25 @@ import React from 'react'
 import './FormContact.css'
 
 const FormContact = () => {
+
+    const sentMessajeContact = (e) => {
+            e.preventDefault();
+            fetch("https://formsubmit.co/ajax/gabialberini733@gmail.com", {
+                method: "POST",
+                body: new FormData(e.target)
+            }).then((res)=> (res.ok ? res.json() : Promise.reject(res)))
+            .then(json =>{
+                console.log(json)
+            })
+            .catch(err => {
+                console.log(err)
+                let message = err.statusText || "Ocurrió un error al enviar, intenta nuevamente"
+                console.log(message)
+            }).finally(()=> {
+                console.log("Excitos")
+            });   
+    }
+
     return (
         <form className='contact-form'>
         <input 
@@ -24,6 +43,7 @@ const FormContact = () => {
             placeholder="Déjame tus comentarios" 
             required/>
         <input 
+            onSubmit={sentMessajeContact}
             type="submit" 
             className="btn" 
             value="Enviar mensaje" />

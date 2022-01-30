@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    font-size: 1.2rem;
 }
 
 .container-info-text {
@@ -22,6 +23,8 @@
 .containter-info-img > img {
     width: 100%;
     object-fit: cover;
+    border-radius: 10px;
+    filter: grayscale(.4);
 }
 
 .container-profiles {
@@ -89,10 +92,12 @@
 @media screen and (max-width: 400px) {
     .container-info {
         flex-direction: column-reverse;
+        font-size: 1rem;
     }
 
     .container-info-text {
         width: 100%;
+        text-align: center;
     }
 
     .containter-info-img {

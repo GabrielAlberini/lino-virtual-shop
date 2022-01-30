@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
 import './ItemCart.css'
-// import { CartContext } from '../../context/cartContext'
+import { CartContext } from '../../context/cartContext';
 
 const ItemCart = ({data}) => {
     const {id, name, img, quantify, price} = data; 
-    // const { deleteProductOfCart } = useContext(CartContext)
+    const { deleteProductOfCart } = useContext(CartContext)
     
     return ( 
         <div className='cart-shop'>
@@ -15,7 +15,8 @@ const ItemCart = ({data}) => {
                 <h5>{name}</h5>
                 <p>Cant: {quantify}</p>
                 <p>${price}</p>
-                <button name={id} type='checkbox' className='delete-item'>X</button>
+                {/*Este boton llama a la funcion del contexto CartContex para modificar el array de products*/}
+                <button onClick={(()=> {deleteProductOfCart(id, price, quantify)})} type='checkbox' className='delete-item'>X</button>
             </div>
         </div>
     )

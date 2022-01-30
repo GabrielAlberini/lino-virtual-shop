@@ -15,7 +15,7 @@ const CountProvider = ({children}) => {
     }
 
     const stateLouderState = () => {
-        setStateLouder(!stateLouder)
+        setStateLouder(false)
     }
 
     const data = {

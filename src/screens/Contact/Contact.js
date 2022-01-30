@@ -9,12 +9,12 @@ const Contact = () => {
     return (
         <Layout>
             <div className='contact'>
-                    <BannerSection/>
+                    <BannerSection title={"Contacto"}/>
                     <div className='container-section section-contact'>
                         <div className='container-data-contact'>
                             <div>
                                 <h4>Mándanos tu consulta.</h4>
-                                <p>No tardaremos mucho en responder :</p>
+                                <p>No tardaremos mucho en responder</p>
                                 <p>Estos son nuestros horarios de trabajo:</p>
                                 <p><b>Lunes</b> a <b>viernes</b>: 9:00 a 16:00.</p>
                                 <p><b>Sábados</b>: 9:00 a 11:00.</p>

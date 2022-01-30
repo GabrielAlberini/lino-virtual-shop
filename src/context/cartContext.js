@@ -5,35 +5,32 @@ const CartContext = createContext()
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState(JSON.parse(localStorage.getItem("OrdenDeProductos")) || [])
     const [totalPrice, setTotalPrice] = useState(JSON.parse(localStorage.getItem("TotalPrice")) || 0)
-    console.log("totalPrice", products)
-    
+
     useEffect(()=> {
         localStorage.setItem("TotalPrice", JSON.parse(totalPrice))
-    }, [totalPrice])
+    }, [totalPrice, products])
 
-    const addProductsInCart = (product) => {
-        setProducts([...products, product])
-        setTotalPrice(totalPrice => totalPrice + (product.price * product.quantify))
-        localStorage.setItem("OrdenDeProductos", JSON.stringify([...products, product]))
-    } 
+    const addProductsInCart = (productNew) => {
+        setProducts([...products, productNew]);
+        setTotalPrice(totalPrice => totalPrice + (productNew.price * productNew.quantify));
+        localStorage.setItem("OrdenDeProductos", JSON.stringify([...products, productNew]));
+    }
 
-    // const deleteProductOfCart = (value) => {
-    //     products.filter(el => {
-    //         console.log("elementooooooooooo", el)
-    //         if(el.id !== value) {
-                
-    //         }
-    //     })
-    // }
+    const deleteProductOfCart = (id, price, quantify) => {
+        const filterProducts = products.filter((product)=> product.id !== id );
+        setProducts(filterProducts);
+        localStorage.setItem("OrdenDeProductos", JSON.stringify(filterProducts));
+        setTotalPrice(totalPrice => totalPrice - (price * quantify));
+        localStorage.setItem("TotalPrice", JSON.parse(totalPrice));
+    };
 
     const statesCart = {
         products,
         addProductsInCart,
         totalPrice,
-        // deleteProductOfCart
+        deleteProductOfCart
     }
 
-    
     return (
         <CartContext.Provider value={statesCart} >
             {children}
