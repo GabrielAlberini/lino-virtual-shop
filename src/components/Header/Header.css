@@ -38,7 +38,7 @@ nav ul a {
 }
 
 .light-mood > nav {
-    background: rgba(172, 250, 172, 0.822);
+    background: rgb(172, 250, 172);
 }
 
 .dark-mood > nav {
@@ -82,7 +82,7 @@ nav > button:nth-child(1) {
     nav ul {
         position: absolute;
         flex-direction: column;
-        background: rgba(172, 250, 172, 0.822);
+        background: rgb(172, 250, 172);
         top: 5.419rem;
         left: 0;
         opacity: 0;

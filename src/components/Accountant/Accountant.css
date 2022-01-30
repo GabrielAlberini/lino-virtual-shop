@@ -12,3 +12,8 @@
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
     margin: auto; 
 }
+
+.item-stock-empty {
+    background-color: tomato;
+    color: black;
+}

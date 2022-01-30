@@ -5,7 +5,6 @@ import { Button } from '@mui/material';
 
 const OptionProductsItem = ({data}) => {
     const {title, body, className, button, link} = data;
-    console.log(link)
     return (
         <>
             <div className={className}>

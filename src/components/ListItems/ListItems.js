@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 const ListItems = ({listItems}) => {
     const { category } = useParams()
-
+    
     return (
         <>
         <div className="container-items">

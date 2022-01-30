@@ -3,7 +3,6 @@ import './CartDescription.css'
 import { useContext } from 'react';
 import { CartContext } from "../../context/cartContext";
 
-
 const CartDescription = ({children}) => {
     const {totalPrice} = useContext(CartContext)
 

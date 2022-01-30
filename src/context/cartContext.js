@@ -8,12 +8,12 @@ const CartProvider = ({children}) => {
 
     useEffect(()=> {
         localStorage.setItem("TotalPrice", JSON.parse(totalPrice))
-    }, [totalPrice, products])
+    }, [totalPrice])
 
-    const addProductsInCart = (productNew) => {
-        setProducts([...products, productNew]);
-        setTotalPrice(totalPrice => totalPrice + (productNew.price * productNew.quantify));
-        localStorage.setItem("OrdenDeProductos", JSON.stringify([...products, productNew]));
+    const addProductsInCart = (product) => {
+        setProducts([...products, product])
+        setTotalPrice(totalPrice => totalPrice + (product.price * product.quantify))
+        localStorage.setItem("OrdenDeProductos", JSON.stringify([...products, product]))
     }
 
     const deleteProductOfCart = (id, price, quantify) => {

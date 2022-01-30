@@ -58,7 +58,7 @@
 
 .delete-item{
     width: 30px;
-    height: 30px;
+    height: 32px;
     border: none;
     background-color: rgb(202, 235, 202);
     cursor: pointer;
@@ -66,6 +66,8 @@
     padding: .4rem;
     margin: auto 0;
     border-radius: 50%;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #ccc;
 }
 
 @media screen and (max-width: 400px) {

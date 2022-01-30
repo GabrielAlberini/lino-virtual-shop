@@ -21,10 +21,24 @@
     width: 50%;
 }
 
+/*Dark mood*/ 
+
+.container-layout-dark .delete-item {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
 @media screen and (max-width: 400px) {
+    .section-cart {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .cont-flex {
         gap: 3rem;
         flex-direction: column;
+        margin: 0;
     }
     .cont-product {
         width: 100%;

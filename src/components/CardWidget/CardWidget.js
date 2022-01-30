@@ -7,18 +7,15 @@ import { CartContext } from "../../context/cartContext";
 import { ItemCart } from "../ItemCart/ItemCart"
 import { CountContext } from '../../context/countContext';
 
-
 const CardWidget = () => {
     const [show, setShow] = useState(false)
     const {products, totalPrice} = useContext(CartContext)
-    const {key, changeSwitchCart, deleteProductOfCart} = useContext(CountContext)
+    const {key, changeSwitchCart} = useContext(CountContext)
 
-    
     const setShowCart = () => {
         setShow(!show)
         changeSwitchCart(!key)
     }
-
     return(
         <div>
             <div className='icon-shop'>
@@ -35,10 +32,11 @@ const CardWidget = () => {
                     <>
                     {
                         products.map((product) => {
-                            console.log("Desde CardWidget", product)
-                            return (<ItemCart  key={product.id} data={product}/>)
+                            return (
+                                <ItemCart key={product.id} data={product}/>
+                            )
                         })
-                        
+
                     }
                     <div className='cont-total-price'>
                     <div className='total-price'>
@@ -56,5 +54,4 @@ const CardWidget = () => {
         </div>
     )
 }
-
 export { CardWidget }

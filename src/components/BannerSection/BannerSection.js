@@ -12,4 +12,4 @@ const BannerSection = ({title}) => {
     )
 }
 
-export { BannerSection }
+export { BannerSection };

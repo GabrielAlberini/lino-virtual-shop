@@ -1,15 +1,16 @@
 import React, {useState} from "react";
 import "./Form.css"
-import { Title } from "../Title/Title";
 import { Button } from '@mui/material';
 import {db} from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore/lite';
+import { MessageToBuy } from '../MessageToBuy/MessageToBuy'
 
 const Form = ({products, totalPrice}) => {
+    const [message, setMessage] = useState(false)
     const [buyer, setBuyer] = useState({
-        name: null,
-        phone: null,
-        mail: null,
+        name: "",
+        phone: "",
+        email: "",
     })
 
     const handleChange = (e) => {
@@ -18,6 +19,7 @@ const Form = ({products, totalPrice}) => {
     }
 
     const sendDates = (e) => {
+        e.preventDefault()
         const order = {}
         order.buyer = buyer;
         order.items = products;
@@ -31,6 +33,11 @@ const Form = ({products, totalPrice}) => {
         //Guardo la respuesta de la conección con la orden realizada.
         const orden = await addDoc(orderFiresbase, order) 
         console.log("Orden enviada a FB", orden);  
+        showMessage()
+    }
+
+    const showMessage = () => {
+        setMessage(true)
     }
  
     return (
@@ -44,11 +51,10 @@ const Form = ({products, totalPrice}) => {
                     placeholder='Nombre' 
                     value={buyer.name} 
                     onChange={handleChange} 
-                    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" 
                     required 
                     autoFocus/>
                 <input 
-                    label="Numero" 
+                    label="phone" 
                     name="phone" 
                     type="number" 
                     placeholder='Telefono' 
@@ -56,8 +62,8 @@ const Form = ({products, totalPrice}) => {
                     onChange={handleChange} 
                     required/>
                 <input 
-                    label="Mail"
-                    name="mail" 
+                    label="email"
+                    name="email" 
                     type="email" 
                     placeholder='Email' 
                     value={buyer.mail} 
@@ -76,6 +82,7 @@ const Form = ({products, totalPrice}) => {
                         Enviar datos
                 </Button>
             </form>
+            {message && <MessageToBuy />}
         </div>
     )
 }

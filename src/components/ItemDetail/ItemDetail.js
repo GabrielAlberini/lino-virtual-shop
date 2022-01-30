@@ -1,15 +1,20 @@
 import React, {useContext} from "react";
 import './ItemDetail.css';
-// import { Accountant } from "../Accountant/Accountant";
 import Arrow from '@mui/icons-material/ArrowForwardIos';
-// import { CartContext } from "../../context/cartContext";
 import { CounterProducts } from "../CounterProducts/CounterProducts";
 import { ThemeContext } from "@emotion/react";
 
 const ItemDetail = ({data}) => {
-    const {name, description, details, img, ingredientes, price, moodOfSale} = data; 
+    const {name, 
+        description,  
+        details, 
+        img, 
+        ingredientes, 
+        price,
+        moodOfSale} = data; 
     const {theme} = useContext(ThemeContext);
-    
+
+
     return(
         <div className={`container-details ${theme ?  "" : "container-details-dark"}`}>
             <div className="img-details">
@@ -27,5 +32,4 @@ const ItemDetail = ({data}) => {
         </div>
     )  
 }
-
 export { ItemDetail };
