@@ -5,6 +5,7 @@ const CartContext = createContext()
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState(JSON.parse(localStorage.getItem("OrdenDeProductos")) || [])
     const [totalPrice, setTotalPrice] = useState(JSON.parse(localStorage.getItem("TotalPrice")) || 0)
+    console.log("products desde context", products)
 
     useEffect(()=> {
         localStorage.setItem("TotalPrice", JSON.parse(totalPrice))

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import './CounterProducts.css'
 import { Accountant } from '../Accountant/Accountant'
 import { CartContext } from '../../context/cartContext'
@@ -15,13 +15,16 @@ const CounterProducts = ({data, showDetail = true}) => {
         quantify : 0
     });
 
-    const {addProductsInCart} = useContext(CartContext)
+    const {products, addProductsInCart} = useContext(CartContext)
     const {changeSwitch} = useContext(CountContext)
-
 
     const onAdd = (value) => {
         itemCart.quantify = value;
     }
+
+    // useEffect(() => {
+    //     console.log("hola")
+    // }, [])
 
     const sendItems = () => {
         if(itemCart.quantify > 0) {
