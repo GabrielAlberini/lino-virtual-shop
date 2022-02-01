@@ -1,0 +1,13 @@
+.container-error {
+    margin-top: 7rem;
+}
+.container-error > p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container-error svg {
+    cursor: auto;
+    pointer-events: none;
+    font-size: 4rem;
+}

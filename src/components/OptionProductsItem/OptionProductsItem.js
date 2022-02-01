@@ -10,7 +10,7 @@ const OptionProductsItem = ({data}) => {
             <div className={className}>
                 <h3>{title}</h3>
                 <p>{body}</p>
-                <Link to={`/${link}`}>
+                <Link to={`/products/${link}`}>
                     <Button className='button-option' variant="outlined" active={"generales"}>{button}</Button>
                 </Link>
             </div>
