@@ -15,16 +15,12 @@ const CounterProducts = ({data, showDetail = true}) => {
         quantify : 0
     });
 
-    const {products, addProductsInCart} = useContext(CartContext)
+    const {addProductsInCart} = useContext(CartContext)
     const {changeSwitch} = useContext(CountContext)
-
+    
     const onAdd = (value) => {
         itemCart.quantify = value;
     }
-
-    // useEffect(() => {
-    //     console.log("hola")
-    // }, [])
 
     const sendItems = () => {
         if(itemCart.quantify > 0) {
@@ -35,12 +31,12 @@ const CounterProducts = ({data, showDetail = true}) => {
 
     return (
         <>
-            <Accountant onAdd={onAdd} data={data} showStock={true} showDetail={false}/>
+            <Accountant onAdd={onAdd} data={data} showStock={true} showDetail={false} />
             <Link to={`/products/${data.category}/${data.id}`}>
                 {showDetail && <button className='btn btn-detail'>Ver producto</button>}
             </Link>
             <button onClick={sendItems} className='btn'>Agregar al carrito</button>
-            </>
+        </>
     )
 }
 export { CounterProducts }

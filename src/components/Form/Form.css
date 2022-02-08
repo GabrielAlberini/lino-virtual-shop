@@ -1,6 +1,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .form input{
@@ -22,4 +23,3 @@
     background: #ccc;
     padding: 2rem;
 }
-

@@ -1,17 +1,15 @@
 import React, {useState} from "react";
 import "./Form.css"
-import { Button } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 import {db} from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore/lite';
 import { MessageToBuy } from '../MessageToBuy/MessageToBuy'
 
 const Form = ({products, totalPrice}) => {
+    const [loader, setLoader] = useState(false)
     const [message, setMessage] = useState(false)
-    const [buyer, setBuyer] = useState({
-        name: "",
-        phone: "",
-        email: "",
-    })
+    const [orderID, setOrderID] = useState()
+    const [buyer, setBuyer] = useState({name: "",phone: "",email: "",})
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -28,18 +26,17 @@ const Form = ({products, totalPrice}) => {
     }
 
     const pushOrder = async(order) => {
+        setLoader(true)
         //Conección (db) con ordenes en firebase.
         const orderFiresbase = collection(db, 'orders')
         //Guardo la respuesta de la conección con la orden realizada.
         const orden = await addDoc(orderFiresbase, order) 
-        console.log("Orden enviada a FB", orden);  
-        showMessage()
-    }
-
-    const showMessage = () => {
+        // console.log("Orden enviada a FB", orden);  
+        setOrderID(orden.id)
+        setLoader(false)
         setMessage(true)
     }
- 
+
     return (
         <div>
             <form className='form'>
@@ -66,7 +63,7 @@ const Form = ({products, totalPrice}) => {
                     name="email" 
                     type="email" 
                     placeholder='Email' 
-                    value={buyer.mail} 
+                    value={buyer.email} 
                     onChange={handleChange} 
                     pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                     required/>
@@ -78,11 +75,14 @@ const Form = ({products, totalPrice}) => {
                     onClick={sendDates} 
                     variant="contained" 
                     color="success" 
-                    type="submit">
+                    type="submit"
+                    required
+                >
                         Enviar datos
                 </Button>
             </form>
-            {message && <MessageToBuy />}
+            {loader && <CircularProgress />}
+            {message && <MessageToBuy orderID={orderID}/>}
         </div>
     )
 }
