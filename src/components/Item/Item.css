@@ -7,6 +7,12 @@
     background-color: rgb(241, 235, 235);
     position: relative;
     padding: 1rem;
+    width: 290px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .item-img {
