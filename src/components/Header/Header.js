@@ -41,7 +41,7 @@ const Header = () => {
                <li><Button variant="outlined">Contacto</Button></li>
             </Link>
             <div className="list-control">
-               
+
             <MaterialUISwitch  color="default" onClick={changeTheme} />
             </div>
          </ul>

@@ -19,7 +19,7 @@ const CardWidget = () => {
     return(
         <div>
             <div className='icon-shop'>
-            <Button style={{marginLeft:10}} onClick={setShowCart}>
+            <Button onClick={setShowCart}>
                 <LocalGroceryStoreIcon />
             </Button>
             </div>
