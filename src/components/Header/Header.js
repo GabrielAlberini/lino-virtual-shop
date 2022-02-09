@@ -4,9 +4,9 @@ import { AppBar } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { CardWidget } from "../CardWidget/CardWidget";
 import { Link } from 'react-router-dom';
-import { Switch } from '@mui/material';
 import { ThemeContext } from "../../context/themeContext"
 import MenuIcon from '@mui/icons-material/Menu';
+import { MaterialUISwitch } from '../DarkMood/DarkMood'
 
 const Header = () => {
    /*Para usar un contexto en un componente wrappeado en app necesitamos exportar primero
@@ -41,7 +41,8 @@ const Header = () => {
                <li><Button variant="outlined">Contacto</Button></li>
             </Link>
             <div className="list-control">
-            <Switch  color="default" onClick={changeTheme} />
+               
+            <MaterialUISwitch  color="default" onClick={changeTheme} />
             </div>
          </ul>
          <CardWidget />

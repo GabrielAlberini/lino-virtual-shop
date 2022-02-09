@@ -11,7 +11,6 @@ const CardWidget = () => {
     const [show, setShow] = useState(false)
     const {products, totalPrice} = useContext(CartContext)
     const {key, changeSwitchCart} = useContext(CountContext)
-    console.log("products", products)
 
     const setShowCart = () => {
         setShow(!show)

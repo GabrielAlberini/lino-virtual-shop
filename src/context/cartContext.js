@@ -5,28 +5,23 @@ const CartContext = createContext()
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState(JSON.parse(localStorage.getItem("OrdenDeProductos")) || [])
     const [totalPrice, setTotalPrice] = useState(JSON.parse(localStorage.getItem("TotalPrice")) || 0)
-
+    
     useEffect(()=> {
         localStorage.setItem("TotalPrice", JSON.parse(totalPrice))
-    }, [totalPrice])
+        localStorage.setItem("OrdenDeProductos", JSON.stringify(products))
+    }, [totalPrice, products])
 
     const addProductsInCart = (product) => {
-        // const exist = products.find((productUnit) => productUnit.id === product.id)
-        // if (exist) {
-        //   setProducts(
-        //     products.map((productUnit) =>
-        //     productUnit.id === product.id
-        //         ? {
-        //             ...exist,
-        //             quantify: exist.quantify + product.quantify,
-        //           }
-        //         : productUnit
-        //     )
-        //   );
-        // } else {
-        //   setProducts([...products, { ...product, quantify: product.quantify }]);
-        //  }
-        setProducts([...products, product])
+        const exist = products.find((productUnit) => productUnit.id === product.id)
+        if (exist) {
+          setProducts(
+            products.map((productUnit) =>
+            productUnit.id === product.id
+                ? {...exist, quantify: exist.quantify + product.quantify}
+                : productUnit));
+        } else {
+          setProducts([...products, { ...product, quantify: product.quantify }]);
+         }
         setTotalPrice(totalPrice => totalPrice + (product.price * product.quantify))
         localStorage.setItem("OrdenDeProductos", JSON.stringify([...products, product]))
     }
@@ -41,6 +36,7 @@ const CartProvider = ({children}) => {
 
     const statesCart = {
         products,
+        setProducts,
         addProductsInCart,
         totalPrice,
         deleteProductOfCart

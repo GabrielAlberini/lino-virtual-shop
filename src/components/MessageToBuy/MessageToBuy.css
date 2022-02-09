@@ -1,3 +1,36 @@
 .container-message {
-    margin-top: 1rem;
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    width: 40%;
+    height: 250px;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 1px 1px 7px rgba(172, 172, 172, 0.637);
+}
+
+
+.container-message svg {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.container-message > p {
+   font-size: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .container-message {
+        width: 90%;
+        height: 220px;
+    }
 }

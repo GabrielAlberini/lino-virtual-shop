@@ -26,6 +26,10 @@ nav ul a {
     margin-left: 15px;
 }
 
+nav ul a:nth-child(3) {
+    margin-right: 15px;
+}
+
 .container-logo {
     width: 150px;
     display: flex;

@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import "./Form.css"
 import { Button, CircularProgress } from '@mui/material';
 import {db} from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore/lite';
-import { MessageToBuy } from '../MessageToBuy/MessageToBuy'
+import { CartContext } from "../../context/cartContext";
 
-const Form = ({products, totalPrice}) => {
+const Form = ({products, totalPrice, setMessage, setOrderID}) => {
     const [loader, setLoader] = useState(false)
-    const [message, setMessage] = useState(false)
-    const [orderID, setOrderID] = useState()
     const [buyer, setBuyer] = useState({name: "",phone: "",email: "",})
+
+    const { setProducts } = useContext(CartContext)
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -33,11 +33,14 @@ const Form = ({products, totalPrice}) => {
         const orden = await addDoc(orderFiresbase, order) 
         // console.log("Orden enviada a FB", orden);  
         setOrderID(orden.id)
+        setProducts([])
+        localStorage.clear();
         setLoader(false)
-        setMessage(true)
+        setMessage(true) 
     }
 
     return (
+        <>
         <div>
             <form className='form'>
                 <h3>Ingrese sus datos para realizar la compra por favor</h3>
@@ -82,8 +85,8 @@ const Form = ({products, totalPrice}) => {
                 </Button>
             </form>
             {loader && <CircularProgress />}
-            {message && <MessageToBuy orderID={orderID}/>}
         </div>
+        </>
     )
 }
 

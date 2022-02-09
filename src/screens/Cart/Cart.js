@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Cart.css'
 import { Layout } from '../../components/Layout/Layout'
 import { useContext } from 'react';
@@ -7,19 +7,23 @@ import { ItemCart } from '../../components/ItemCart/ItemCart';
 import { Title } from '../../components/Title/Title';
 import { Form } from '../../components/Form/Form';
 import { CartDescription } from '../../components/CartDescription/CartDescription'
+import { MessageToBuy } from '../../components/MessageToBuy/MessageToBuy'
 
 const Cart = () => {
     const {products, totalPrice} = useContext(CartContext)
+    const [message, setMessage] = useState(false)
+    const [orderID, setOrderID] = useState()
 
     return (
         <Layout>
+            <>
             <div className='container-section section-cart'>
                 <Title className="title-card" showTitle={true} title={"Cart"}/>
                 {
-                    products.length === 0
-                    ?
-                    <h3>No hay productos en el carrito.</h3>
-                    :
+                    // products.length === 0
+                    // ?
+                    // <h3>No hay productos en el carrito.</h3>
+                    // :
                     <div className='cont-flex'>
                         <CartDescription>
                         {
@@ -33,11 +37,18 @@ const Cart = () => {
                         }
                         </CartDescription>
                     <div className='cont-pay'>
-                        <Form products={products} totalPrice={totalPrice}/> 
+                        <Form 
+                            products={products} 
+                            totalPrice={totalPrice} 
+                            setMessage={setMessage} 
+                            setOrderID={setOrderID}/> 
                     </div>
+                    
                 </div>
                 }
             </div>
+            {message && <MessageToBuy orderID={orderID}/>}
+            </>
         </Layout >
     )
 }

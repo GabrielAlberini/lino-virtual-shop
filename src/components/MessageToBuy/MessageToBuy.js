@@ -7,7 +7,7 @@ const MessageToBuy = ({orderID}) => {
     return (
         <div className='container-message'>
             <HappyFace />
-            <p>Muchas gracias por su compra! Su número de compra es: {orderID}</p>
+            <p>Muchas gracias por su compra! Su ID de compra es: <b>{orderID}</b></p>
             <Link to="/">
                 <button className='btn'>Volver al inicio</button>
             </Link>
