@@ -24,7 +24,7 @@
     text-align: left;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     .title-banner {
         font-size: 3.2rem;
         left: 10px;

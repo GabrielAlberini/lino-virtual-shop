@@ -51,9 +51,10 @@
     border-left: 10px solid orange;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
     .container-details {
         flex-direction: column;
         margin-top: 4rem;
     }
 }
+

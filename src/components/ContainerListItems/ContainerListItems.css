@@ -1,12 +1,25 @@
-.container-items {
-    width: 100%;
+.container-item-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    margin: 4rem 0;
 }
 
-.container-item-list {
-    padding: 2rem 1rem;
+.container-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .container-items {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container-items {
+        grid-template-columns: 1fr;
+    }
+}
+

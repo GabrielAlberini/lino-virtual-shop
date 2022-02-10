@@ -72,7 +72,7 @@ nav > button:nth-child(1) {
     display: none;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     header {
         position: relative;
         display: flex;

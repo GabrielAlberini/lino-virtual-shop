@@ -23,7 +23,25 @@
     font-size: 1.8rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
+    .section-contact {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-data-contact {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .container-data-wsp  {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
     .section-contact {
         flex-direction: column;
     }

@@ -32,7 +32,7 @@ svg:hover {
     padding: 1rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     svg {
         color: black;
         margin-right: 0;

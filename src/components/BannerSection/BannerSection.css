@@ -17,7 +17,7 @@
     text-align: center;;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     .title-banner-section {
         font-size: 2.5rem;
     }
