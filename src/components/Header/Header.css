@@ -83,10 +83,11 @@ nav > button:nth-child(1) {
         position: absolute;
         flex-direction: column;
         background: rgb(172, 250, 172);
-        top: 5.419rem;
+        top: 5.3rem;
         left: 0;
         opacity: 0;
         pointer-events: none;
+        padding-bottom: .5rem;
     }
     
     nav ul > a {
