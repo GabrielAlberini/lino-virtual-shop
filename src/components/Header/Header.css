@@ -42,7 +42,7 @@ nav ul a:nth-child(3) {
 }
 
 .list-control {
-    padding-bottom: .3rem;
+    padding: .5rem;
 }
 
 .light-mood > nav {
@@ -51,6 +51,10 @@ nav ul a:nth-child(3) {
 
 .dark-mood > nav {
     background: rgb(53, 53, 53);
+}
+
+.dark-mood > nav ul {
+    background: rgb(95, 95, 95);
 }
 
 .dark-mood button {
@@ -87,7 +91,7 @@ nav > button:nth-child(1) {
         position: absolute;
         flex-direction: column;
         background: rgb(172, 250, 172);
-        top: 5.419rem;
+        top: 5.3rem;
         left: 0;
         opacity: 0;
         pointer-events: none;
