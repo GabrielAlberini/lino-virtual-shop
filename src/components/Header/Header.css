@@ -41,10 +41,6 @@ nav ul a:nth-child(3) {
     width: 100%;
 }
 
-.list-control {
-    padding: .5rem;
-}
-
 .light-mood > nav {
     background: rgb(172, 250, 172);
 }
@@ -93,6 +89,10 @@ nav > button:nth-child(1) {
         pointer-events: none;
     }
     
+    .list-control {
+        padding: .5rem;
+    }
+
     nav ul > a {
         width: 100%;
         margin: 0;
