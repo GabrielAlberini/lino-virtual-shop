@@ -37,6 +37,7 @@ const CartProvider = ({children}) => {
     const statesCart = {
         products,
         setProducts,
+        setTotalPrice,
         addProductsInCart,
         totalPrice,
         deleteProductOfCart

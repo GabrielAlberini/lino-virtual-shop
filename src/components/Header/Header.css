@@ -53,10 +53,6 @@ nav ul a:nth-child(3) {
     background: rgb(53, 53, 53);
 }
 
-.dark-mood > nav ul {
-    background: rgb(95, 95, 95);
-}
-
 .dark-mood button {
     background: rgb(53, 53, 53);
     border: 1px solid white;
@@ -117,6 +113,10 @@ nav > button:nth-child(1) {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .dark-mood > nav ul {
+        background: rgb(95, 95, 95);
     }
 
     .menuHam {

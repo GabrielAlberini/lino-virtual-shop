@@ -20,20 +20,10 @@ const Cart = () => {
             <div className='container-section section-cart'>
                 <Title className="title-card" showTitle={true} title={"Cart"}/>
                 {
-                    // products.length === 0
-                    // ?
-                    // <h3>No hay productos en el carrito.</h3>
-                    // :
                     <div className='cont-flex'>
                         <CartDescription>
                         {
-                            products.map((product, i)=> {
-                                return (
-                                    <>
-                                        <ItemCart key={product.id} data={product}/>
-                                    </>
-                                )
-                            })
+                            products.map((product) => <ItemCart key={product.id} data={product}/>) 
                         }
                         </CartDescription>
                     <div className='cont-pay'>
@@ -41,7 +31,8 @@ const Cart = () => {
                             products={products} 
                             totalPrice={totalPrice} 
                             setMessage={setMessage} 
-                            setOrderID={setOrderID}/> 
+                            setOrderID={setOrderID}
+                        /> 
                     </div>
                     
                 </div>

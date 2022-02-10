@@ -9,7 +9,7 @@ const Form = ({products, totalPrice, setMessage, setOrderID}) => {
     const [loader, setLoader] = useState(false)
     const [buyer, setBuyer] = useState({name: "",phone: "",email: "",})
 
-    const { setProducts } = useContext(CartContext)
+    const { setProducts, setTotalPrice } = useContext(CartContext)
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -34,9 +34,11 @@ const Form = ({products, totalPrice, setMessage, setOrderID}) => {
         // console.log("Orden enviada a FB", orden);  
         setOrderID(orden.id)
         setProducts([])
+        setTotalPrice(0)
         localStorage.clear();
         setLoader(false)
         setMessage(true) 
+        setBuyer({name: "", phone: "", email: ""})
     }
 
     return (
@@ -79,7 +81,6 @@ const Form = ({products, totalPrice, setMessage, setOrderID}) => {
                     variant="contained" 
                     color="success" 
                     type="submit"
-                    required
                 >
                         Enviar datos
                 </Button>

@@ -1,12 +1,12 @@
 .section-cart {
-    margin-top: 7rem;
+    padding: 6rem 0 2rem 0;
 }
 
 .cont-flex {
     display: flex;
     justify-content: space-around;
     gap: 5rem;
-    margin: 2rem;
+    padding: 2rem;
 }
 
 .cont-product-cart {
@@ -28,7 +28,7 @@
     color: white;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     .section-cart {
         display: flex;
         flex-direction: column;
@@ -36,7 +36,8 @@
         align-items: center;
     }
     .cont-flex {
-        gap: 3rem;
+        padding: 0;
+        gap: 2rem;
         flex-direction: column;
         margin: 0;
     }
