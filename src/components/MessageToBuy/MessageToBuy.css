@@ -22,13 +22,15 @@
 .container-message svg {
     font-size: 3rem;
     margin-bottom: 0;
+    cursor: none;
 }
 
 .container-message > p {
    font-size: 1rem;
+   margin-top: .4rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     .container-message {
         width: 90%;
         height: 220px;
