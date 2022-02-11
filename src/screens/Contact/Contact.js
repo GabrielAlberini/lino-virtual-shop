@@ -13,7 +13,7 @@ const Contact = () => {
                     <div className='container-section section-contact'>
                         <div className='container-data-contact'>
                             <div>
-                                <h4>Mándanos tu consulta.</h4>
+                                <h4>¿Tenes algun comentario que nos quieras hacer?</h4>
                                 <p>No tardaremos mucho en responder</p>
                                 <p>Estos son nuestros horarios de trabajo:</p>
                                 <p><b>Lunes</b> a <b>viernes</b>: 9:00 a 16:00.</p>

@@ -14,8 +14,7 @@ const Item = ({data}) => {
                 <img className='item-img' src={img} alt={name} />
             </div>
             <h3>{name}</h3>
-            <span className="item-price">${price}</span>
-            <span> x {moodOfSale}</span>
+            <span className="item-price">${price} x {moodOfSale}</span>
             <p>{description}</p>
             <CounterProducts data={data}/>
         </div>
