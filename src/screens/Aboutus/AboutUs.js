@@ -35,7 +35,7 @@ const AboutUs = () => {
                         <div className='container-info'>
                             <div className='container-info-text'>
                                 <h3><b>Chino y Lore</b></h3>
-                                <p>Somos dos jóvenes de Santa Fe. LINO Nació a mediados de 2019 con el objetivo de sumar en la ciudad un emprendimiento que se fortalezca en productos veganos libres de crueeldad animal y fabricados 100% artesanalmente.</p>
+                                <p>Somos dos jóvenes de Santa Fe. LINO Nació a mediados de 2019 con el objetivo de sumar en la ciudad un emprendimiento que se fortalezca en productos veganos libres de crueldad animal y fabricados 100% artesanalmente.</p>
                                 <p>Comenzamos con la idea de gestar un pequeño emprendimiento. Con el paso de los días y el crecimiento de personas que nos eligieron y siguen confiando en nosotros, hoy en día tenemos la posibilidad de seguir creciendo.</p>
                             </div>
                             <div className='containter-info-img'>

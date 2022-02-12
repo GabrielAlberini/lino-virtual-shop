@@ -9,7 +9,7 @@ const OptionProducts = ({showOption = true}) => {
     const dataOption = [
         {
             title: "CONGELADOS",
-            body: "En esta sección encontrarás nuestros productos frezados. Todos 100% artesanales y listos para comer o guardar hasta que lo precises.",
+            body: "En ésta sección encontrarás nuestros productos frezados. Todos 100% artesanales y listos para comer o guardar hasta que lo precises.",
             className: "select-frozen",
             button: "Congelados",
             link: "congelados"
