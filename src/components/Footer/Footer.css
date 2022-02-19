@@ -30,6 +30,13 @@ a {
     color: orange;
 }
 
+@media screen and (max-width: 780px) {
+    .footer > div {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .footer {
         flex-direction: column;

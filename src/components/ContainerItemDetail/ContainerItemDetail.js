@@ -11,10 +11,10 @@ import { CircularProgress } from '@mui/material';
 // import { CountContext } from "../../context/countContext"
 
 const ContainerItemDetail = () => {
-
     const [ products, setProducts ] = useState([]);
     const [ loader, setLoader ] = useState(true);
     const { id } = useParams()
+    console.log("detail", products)
 
     async function getProducts(db) {
         //Aquí debajo va en orden: La conexón, nombre de la colección y parametro para efectuar el filtro.
@@ -28,7 +28,7 @@ const ContainerItemDetail = () => {
         } else {
             //En caso de que falle la llamada o no exista el doc.
             console.log("No such document!");
-    }
+        }
     }
 
     //Se utiliza un useEffect para llamar a la api solo cuando se renderiza el componente.

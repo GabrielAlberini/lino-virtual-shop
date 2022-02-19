@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import './CounterProducts.css'
 import { Accountant } from '../Accountant/Accountant'
 import { CartContext } from '../../context/cartContext'
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { CountContext } from '../../context/countContext';
 
 const CounterProducts = ({data, showDetail = true}) => {
-
+    
     const [itemCart] = useState({
         img : data.img,
         name : data.name,

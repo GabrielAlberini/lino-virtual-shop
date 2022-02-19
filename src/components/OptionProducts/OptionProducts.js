@@ -6,6 +6,7 @@ import { OptionProductsItem } from '../OptionProductsItem/OptionProductsItem';
 
 const OptionProducts = ({showOption = true}) => {
     const {theme} = useContext(ThemeContext)
+    
     const dataOption = [
         {
             title: "CONGELADOS",

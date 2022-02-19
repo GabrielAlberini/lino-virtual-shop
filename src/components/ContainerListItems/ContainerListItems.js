@@ -18,6 +18,8 @@ const ContainerListItems = () => {
     const {theme} = useContext(ThemeContext)
     const { stateLouderState, stateLouder } = useContext(CountContext)
 
+    console.log("products", products)
+
     useEffect(()=> {
         getProducts(db).then((data) => {
             if (category) {
